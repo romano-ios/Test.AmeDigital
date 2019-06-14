@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9p3-oq-d1c">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pacifico-Regular.ttf">
+            <string>Pacifico-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--About View Controller-->
+        <scene sceneID="UEB-26-k0U">
+            <objects>
+                <viewController id="REn-ll-Kp5" customClass="AboutViewController" customModule="Test_AmeDigitalLodjinha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="drE-BT-ctV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSobre" translatesAutoresizingMaskIntoConstraints="NO" id="7jx-vz-yms">
+                                <rect key="frame" x="115" y="128" width="184" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="aez-CG-fyy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a Lodjinha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="31" translatesAutoresizingMaskIntoConstraints="NO" id="dtg-Qp-7Wu">
+                                <rect key="frame" x="8" y="348" width="398" height="109"/>
+                                <fontDescription key="fontDescription" name="Pacifico-Regular" family="Pacifico" pointSize="62"/>
+                                <color key="textColor" red="0.29016393423080444" green="0.2902185320854187" blue="0.2901567816734314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 de junho de 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLV-0D-cWB">
+                                <rect key="frame" x="8" y="772" width="398" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.44701206684112549" green="0.44709151983261108" blue="0.44700163602828979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leandro Romano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdA-4O-jGs">
+                                <rect key="frame" x="8" y="741" width="398" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" red="0.38427281379699707" green="0.38434231281280518" blue="0.38426366448402405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98813825845718384" green="0.98830324411392212" blue="0.9881165623664856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7jx-vz-yms" firstAttribute="top" secondItem="GVU-kc-I1h" secondAttribute="top" constant="40" id="3yd-cI-p9b"/>
+                            <constraint firstItem="dtg-Qp-7Wu" firstAttribute="top" secondItem="7jx-vz-yms" secondAttribute="bottom" constant="20" id="6aG-mG-qjR"/>
+                            <constraint firstItem="vLV-0D-cWB" firstAttribute="bottom" secondItem="GVU-kc-I1h" secondAttribute="bottom" constant="-20" id="CjE-nZ-Ohe"/>
+                            <constraint firstItem="GVU-kc-I1h" firstAttribute="trailing" secondItem="vLV-0D-cWB" secondAttribute="trailing" constant="8" id="FAF-TB-qFR"/>
+                            <constraint firstItem="dtg-Qp-7Wu" firstAttribute="leading" secondItem="GVU-kc-I1h" secondAttribute="leading" constant="8" id="Hs2-XQ-uBX"/>
+                            <constraint firstItem="7jx-vz-yms" firstAttribute="leading" secondItem="GVU-kc-I1h" secondAttribute="leading" constant="115" id="Kk8-OH-2DG"/>
+                            <constraint firstItem="vLV-0D-cWB" firstAttribute="leading" secondItem="GVU-kc-I1h" secondAttribute="leading" constant="8" id="P0W-xD-0gB"/>
+                            <constraint firstItem="GVU-kc-I1h" firstAttribute="trailing" secondItem="7jx-vz-yms" secondAttribute="trailing" constant="115" id="YQg-WW-asR"/>
+                            <constraint firstItem="gdA-4O-jGs" firstAttribute="leading" secondItem="GVU-kc-I1h" secondAttribute="leading" constant="8" id="bE3-XO-xkP"/>
+                            <constraint firstItem="GVU-kc-I1h" firstAttribute="trailing" secondItem="dtg-Qp-7Wu" secondAttribute="trailing" constant="8" id="h2m-DW-8Gi"/>
+                            <constraint firstItem="vLV-0D-cWB" firstAttribute="top" secondItem="gdA-4O-jGs" secondAttribute="bottom" constant="8" id="qdH-dQ-XT3"/>
+                            <constraint firstItem="GVU-kc-I1h" firstAttribute="trailing" secondItem="gdA-4O-jGs" secondAttribute="trailing" constant="8" id="t3Q-XM-G2K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GVU-kc-I1h"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ceg-Kp-5VP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tkq-Np-Nl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931.88405797101461" y="164.73214285714286"/>
+        </scene>
+        <!--Sobre-->
+        <scene sceneID="zpR-ey-3ph">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9p3-oq-d1c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sobre" image="tagDeselected" selectedImage="tagSelected" id="F40-sj-0JX"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sVt-ON-s7r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="REn-ll-Kp5" kind="relationship" relationship="rootViewController" id="Hxg-ww-csi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="60E-fa-3MH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.739130434782609" y="165.40178571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoSobre" width="71.5" height="76"/>
+        <image name="tagDeselected" width="12.5" height="12.5"/>
+        <image name="tagSelected" width="12.5" height="12.5"/>
+    </resources>
+</document>

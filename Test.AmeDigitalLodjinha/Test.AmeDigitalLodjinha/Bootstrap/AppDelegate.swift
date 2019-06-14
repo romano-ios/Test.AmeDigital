@@ -12,12 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    private let kMainColor = UIColor(red: 106/255, green: 61/255, blue: 145/255, alpha: 1.0)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().barTintColor = UIColor(red: 106/255, green: 61/255, blue: 145/255, alpha: 1.0)
-        UITabBar.appearance().tintColor = UIColor(red: 106/255, green: 61/255, blue: 145/255, alpha: 1.0)
+        self.setupNavigationBarAppearance()
+        self.setupTabBarAppearance()
         return true
+    }
+    
+    private func setupNavigationBarAppearance() {
+        UINavigationBar.appearance().barTintColor = kMainColor
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+    }
+    
+    private func setupTabBarAppearance() {
+        UITabBar.appearance().tintColor = kMainColor
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

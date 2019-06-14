@@ -22,6 +22,9 @@
 		FD2B722D22B3EF5F00AAB71D /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD2B722C22B3EF5F00AAB71D /* Pacifico-Regular.ttf */; };
 		FD2B722F22B3F0B200AAB71D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD2B722E22B3F0B200AAB71D /* Colors.xcassets */; };
 		FD2B723622B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B723522B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift */; };
+		FD2B723822B3FFBD00AAB71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2B723722B3FFBD00AAB71D /* Main.storyboard */; };
+		FD2B723B22B4008500AAB71D /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2B723A22B4008500AAB71D /* About.storyboard */; };
+		FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B723C22B400BB00AAB71D /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		FD2B722C22B3EF5F00AAB71D /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		FD2B722E22B3F0B200AAB71D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FD2B723522B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBarStyle.swift"; sourceTree = "<group>"; };
+		FD2B723722B3FFBD00AAB71D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FD2B723A22B4008500AAB71D /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		FD2B723C22B400BB00AAB71D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2B71F322B3EBDA00AAB71D /* LaunchScreen.storyboard */,
+				FD2B723722B3FFBD00AAB71D /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2B721C22B3ED1B00AAB71D /* Home */,
+				FD2B723922B4006F00AAB71D /* About */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -211,6 +219,15 @@
 				FD2B723522B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FD2B723922B4006F00AAB71D /* About */ = {
+			isa = PBXGroup;
+			children = (
+				FD2B723C22B400BB00AAB71D /* AboutViewController.swift */,
+				FD2B723A22B4008500AAB71D /* About.storyboard */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,8 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2B722F22B3F0B200AAB71D /* Colors.xcassets in Resources */,
+				FD2B723B22B4008500AAB71D /* About.storyboard in Resources */,
 				FD2B722A22B3ED4B00AAB71D /* Home.storyboard in Resources */,
 				FD2B722D22B3EF5F00AAB71D /* Pacifico-Regular.ttf in Resources */,
+				FD2B723822B3FFBD00AAB71D /* Main.storyboard in Resources */,
 				FD2B71F522B3EBDA00AAB71D /* LaunchScreen.storyboard in Resources */,
 				FD2B71F222B3EBDA00AAB71D /* Assets.xcassets in Resources */,
 			);
@@ -349,6 +368,7 @@
 				FD2B71EB22B3EBD900AAB71D /* AppDelegate.swift in Sources */,
 				FD2B722622B3ED3800AAB71D /* HomeModels.swift in Sources */,
 				FD2B723622B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift in Sources */,
+				FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */,
 				FD2B722522B3ED3800AAB71D /* HomeRouter.swift in Sources */,
 				FD2B722422B3ED3800AAB71D /* HomeWorker.swift in Sources */,
 				FD2B722322B3ED3800AAB71D /* HomePresenter.swift in Sources */,
