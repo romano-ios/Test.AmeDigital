@@ -17,7 +17,7 @@ protocol HomeDisplayLogic: class {
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
-
+    
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
 
