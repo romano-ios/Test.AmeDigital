@@ -14,6 +14,7 @@ import UIKit
 
 protocol HomeBusinessLogic {
     func doSomething(request: Home.Something.Request)
+    func setNavigationLogoView()
 }
 
 protocol HomeDataStore {
@@ -21,7 +22,7 @@ protocol HomeDataStore {
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
-
+    
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
     //var name: String = ""
@@ -34,6 +35,10 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         
         let response = Home.Something.Response()
         presenter?.presentSomething(response: response)
+    }
+    
+    func setNavigationLogoView() {
+        presenter?.presentNavigationLogo()
     }
 
 }

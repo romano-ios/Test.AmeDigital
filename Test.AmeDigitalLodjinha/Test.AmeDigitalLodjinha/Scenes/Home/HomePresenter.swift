@@ -14,6 +14,7 @@ import UIKit
 
 protocol HomePresentationLogic {
     func presentSomething(response: Home.Something.Response)
+    func presentNavigationLogo()
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -25,6 +26,10 @@ class HomePresenter: HomePresentationLogic {
     func presentSomething(response: Home.Something.Response) {
         let viewModel = Home.Something.ViewModel()
         viewController?.displaySomething(viewModel: viewModel)
+    }
+    
+    func presentNavigationLogo() {
+        viewController?.displayNavigationLogo()
     }
     
 }

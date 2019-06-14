@@ -14,9 +14,10 @@ import UIKit
 
 protocol HomeDisplayLogic: class {
     func displaySomething(viewModel: Home.Something.ViewModel)
+    func displayNavigationLogo()
 }
 
-class HomeViewController: UIViewController, HomeDisplayLogic {
+class HomeViewController: UIViewController {
     
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
@@ -64,7 +65,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         doSomething()
-        print("Hello World by Clean Swift architecture.")
+        
+        interactor?.setNavigationLogoView()
     }
 
     // MARK: Do something
@@ -76,8 +78,20 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         interactor?.doSomething(request: request)
     }
 
+}
+
+extension HomeViewController: HomeDisplayLogic {
+    
     func displaySomething(viewModel: Home.Something.ViewModel) {
         //nameTextField.text = viewModel.name
+    }
+    
+    func displayNavigationLogo() {
+        let logoNavbar = UIImage(named: "logoNavbar")
+        if let logo = logoNavbar {
+            let imageView = UIImageView(image: logo)
+            self.navigationItem.titleView = imageView
+        }
     }
     
 }
