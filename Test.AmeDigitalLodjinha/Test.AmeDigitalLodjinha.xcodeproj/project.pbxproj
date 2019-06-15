@@ -123,7 +123,7 @@
 				FD2B721B22B3ECE700AAB71D /* Scenes */,
 				FD2B723022B3F22900AAB71D /* Global */,
 				FD2B721922B3ECC000AAB71D /* Views */,
-				FD2B721A22B3ECDE00AAB71D /* Assets */,
+				FD2B721A22B3ECDE00AAB71D /* Resources */,
 				FD2B71F622B3EBDA00AAB71D /* Info.plist */,
 			);
 			path = Test.AmeDigitalLodjinha;
@@ -164,14 +164,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FD2B721A22B3ECDE00AAB71D /* Assets */ = {
+		FD2B721A22B3ECDE00AAB71D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FD2B71F122B3EBDA00AAB71D /* Assets.xcassets */,
-				FD2B722E22B3F0B200AAB71D /* Colors.xcassets */,
+				FD3CE09A22B47794003F480D /* Assets */,
 				FD2B722B22B3EF4F00AAB71D /* Fonts */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FD2B721B22B3ECE700AAB71D /* Scenes */ = {
@@ -228,6 +227,15 @@
 				FD2B723A22B4008500AAB71D /* About.storyboard */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		FD3CE09A22B47794003F480D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FD2B71F122B3EBDA00AAB71D /* Assets.xcassets */,
+				FD2B722E22B3F0B200AAB71D /* Colors.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
