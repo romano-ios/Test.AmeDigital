@@ -37,8 +37,8 @@ class NetworkProvider {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = httpMethod
         urlRequest.httpBody = data
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue(Constants.httpHeaderValueApplicationJson, forHTTPHeaderField: Constants.httpHeaderKeyContentType)
+        urlRequest.addValue(Constants.httpHeaderValueApplicationJson, forHTTPHeaderField: Constants.httpHeaderKeyAccept)
         
         return urlRequest
     }

@@ -18,4 +18,8 @@ struct Constants {
     static let apiProductUrl = "/produto"
     static let apiBestSellersProductsUrl = "/produto/maisvendidos"
     
+    static let httpHeaderKeyContentType = "Content-Type"
+    static let httpHeaderKeyAccept = "Accept"
+    static let httpHeaderValueApplicationJson = "application/json"
+    
 }
