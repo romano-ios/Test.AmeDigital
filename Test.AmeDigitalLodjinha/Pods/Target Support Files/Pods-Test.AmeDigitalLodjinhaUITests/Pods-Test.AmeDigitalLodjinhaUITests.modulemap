@@ -1,0 +1,6 @@
+framework module Pods_Test_AmeDigitalLodjinhaUITests {
+  umbrella header "Pods-Test.AmeDigitalLodjinhaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

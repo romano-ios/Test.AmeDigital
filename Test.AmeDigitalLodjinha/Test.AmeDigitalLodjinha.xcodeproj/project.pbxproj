@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0252AE3F812F7E23D0A769 /* Pods_Test_AmeDigitalLodjinhaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930E0D771BEDE672004100E1 /* Pods_Test_AmeDigitalLodjinhaTests.framework */; };
+		CB9A08BBB3C8A5776A47E6A7 /* Pods_Test_AmeDigitalLodjinhaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8E27FE986F5AD9131F10F2 /* Pods_Test_AmeDigitalLodjinhaUITests.framework */; };
+		CD4A61C5EDC22C7405A112D2 /* Pods_Test_AmeDigitalLodjinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B912AE811AE17F836434AA6F /* Pods_Test_AmeDigitalLodjinha.framework */; };
 		FD2B71EB22B3EBD900AAB71D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B71EA22B3EBD900AAB71D /* AppDelegate.swift */; };
 		FD2B71F222B3EBDA00AAB71D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD2B71F122B3EBDA00AAB71D /* Assets.xcassets */; };
 		FD2B71F522B3EBDA00AAB71D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2B71F322B3EBDA00AAB71D /* LaunchScreen.storyboard */; };
@@ -50,6 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B96370FEFD77977584E1E5E /* Pods-Test.AmeDigitalLodjinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.AmeDigitalLodjinha.release.xcconfig"; path = "Target Support Files/Pods-Test.AmeDigitalLodjinha/Pods-Test.AmeDigitalLodjinha.release.xcconfig"; sourceTree = "<group>"; };
+		42A1AB7F34555741FE467324 /* Pods-Test.AmeDigitalLodjinhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.AmeDigitalLodjinhaTests.release.xcconfig"; path = "Target Support Files/Pods-Test.AmeDigitalLodjinhaTests/Pods-Test.AmeDigitalLodjinhaTests.release.xcconfig"; sourceTree = "<group>"; };
+		6654A8E1624B542BBE24DA6E /* Pods-Test.AmeDigitalLodjinhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.AmeDigitalLodjinhaTests.debug.xcconfig"; path = "Target Support Files/Pods-Test.AmeDigitalLodjinhaTests/Pods-Test.AmeDigitalLodjinhaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		930E0D771BEDE672004100E1 /* Pods_Test_AmeDigitalLodjinhaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_AmeDigitalLodjinhaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8E27FE986F5AD9131F10F2 /* Pods_Test_AmeDigitalLodjinhaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_AmeDigitalLodjinhaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B912AE811AE17F836434AA6F /* Pods_Test_AmeDigitalLodjinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_AmeDigitalLodjinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C156E2C6E14D9BC4693AC249 /* Pods-Test.AmeDigitalLodjinhaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.AmeDigitalLodjinhaUITests.release.xcconfig"; path = "Target Support Files/Pods-Test.AmeDigitalLodjinhaUITests/Pods-Test.AmeDigitalLodjinhaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D0651CFC216378C3BDC5A5D0 /* Pods-Test.AmeDigitalLodjinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.AmeDigitalLodjinha.debug.xcconfig"; path = "Target Support Files/Pods-Test.AmeDigitalLodjinha/Pods-Test.AmeDigitalLodjinha.debug.xcconfig"; sourceTree = "<group>"; };
+		DC0F69FC731274B95292CB77 /* Pods-Test.AmeDigitalLodjinhaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.AmeDigitalLodjinhaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Test.AmeDigitalLodjinhaUITests/Pods-Test.AmeDigitalLodjinhaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2B71E722B3EBD900AAB71D /* Test.AmeDigitalLodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.AmeDigitalLodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD2B71EA22B3EBD900AAB71D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD2B71F122B3EBDA00AAB71D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4A61C5EDC22C7405A112D2 /* Pods_Test_AmeDigitalLodjinha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0252AE3F812F7E23D0A769 /* Pods_Test_AmeDigitalLodjinhaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,12 +114,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9A08BBB3C8A5776A47E6A7 /* Pods_Test_AmeDigitalLodjinhaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		898B3C4ED0F9C18624885A58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0651CFC216378C3BDC5A5D0 /* Pods-Test.AmeDigitalLodjinha.debug.xcconfig */,
+				0B96370FEFD77977584E1E5E /* Pods-Test.AmeDigitalLodjinha.release.xcconfig */,
+				6654A8E1624B542BBE24DA6E /* Pods-Test.AmeDigitalLodjinhaTests.debug.xcconfig */,
+				42A1AB7F34555741FE467324 /* Pods-Test.AmeDigitalLodjinhaTests.release.xcconfig */,
+				DC0F69FC731274B95292CB77 /* Pods-Test.AmeDigitalLodjinhaUITests.debug.xcconfig */,
+				C156E2C6E14D9BC4693AC249 /* Pods-Test.AmeDigitalLodjinhaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8EA93899906301F3AFDFD65C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B912AE811AE17F836434AA6F /* Pods_Test_AmeDigitalLodjinha.framework */,
+				930E0D771BEDE672004100E1 /* Pods_Test_AmeDigitalLodjinhaTests.framework */,
+				AD8E27FE986F5AD9131F10F2 /* Pods_Test_AmeDigitalLodjinhaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD2B71DE22B3EBD900AAB71D = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +152,8 @@
 				FD2B71FE22B3EBDB00AAB71D /* Test.AmeDigitalLodjinhaTests */,
 				FD2B720922B3EBDB00AAB71D /* Test.AmeDigitalLodjinhaUITests */,
 				FD2B71E822B3EBD900AAB71D /* Products */,
+				898B3C4ED0F9C18624885A58 /* Pods */,
+				8EA93899906301F3AFDFD65C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD2B720F22B3EBDB00AAB71D /* Build configuration list for PBXNativeTarget "Test.AmeDigitalLodjinha" */;
 			buildPhases = (
+				957804C88BEF3BF06829AE07 /* [CP] Check Pods Manifest.lock */,
 				FD2B71E322B3EBD900AAB71D /* Sources */,
 				FD2B71E422B3EBD900AAB71D /* Frameworks */,
 				FD2B71E522B3EBD900AAB71D /* Resources */,
+				96FE2C7DA720B1BFF8BE004B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,6 +328,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD2B721222B3EBDB00AAB71D /* Build configuration list for PBXNativeTarget "Test.AmeDigitalLodjinhaTests" */;
 			buildPhases = (
+				71C959E2CA7BBA6C5AE18C39 /* [CP] Check Pods Manifest.lock */,
 				FD2B71F722B3EBDB00AAB71D /* Sources */,
 				FD2B71F822B3EBDB00AAB71D /* Frameworks */,
 				FD2B71F922B3EBDB00AAB71D /* Resources */,
@@ -303,6 +347,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD2B721522B3EBDB00AAB71D /* Build configuration list for PBXNativeTarget "Test.AmeDigitalLodjinhaUITests" */;
 			buildPhases = (
+				76BCED73E7E57D873A5B3059 /* [CP] Check Pods Manifest.lock */,
 				FD2B720222B3EBDB00AAB71D /* Sources */,
 				FD2B720322B3EBDB00AAB71D /* Frameworks */,
 				FD2B720422B3EBDB00AAB71D /* Resources */,
@@ -390,6 +435,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71C959E2CA7BBA6C5AE18C39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test.AmeDigitalLodjinhaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76BCED73E7E57D873A5B3059 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test.AmeDigitalLodjinhaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		957804C88BEF3BF06829AE07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test.AmeDigitalLodjinha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96FE2C7DA720B1BFF8BE004B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test.AmeDigitalLodjinha/Pods-Test.AmeDigitalLodjinha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test.AmeDigitalLodjinha/Pods-Test.AmeDigitalLodjinha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD2B71E322B3EBD900AAB71D /* Sources */ = {
@@ -574,6 +710,7 @@
 		};
 		FD2B721022B3EBDB00AAB71D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0651CFC216378C3BDC5A5D0 /* Pods-Test.AmeDigitalLodjinha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -592,6 +729,7 @@
 		};
 		FD2B721122B3EBDB00AAB71D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B96370FEFD77977584E1E5E /* Pods-Test.AmeDigitalLodjinha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -610,6 +748,7 @@
 		};
 		FD2B721322B3EBDB00AAB71D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6654A8E1624B542BBE24DA6E /* Pods-Test.AmeDigitalLodjinhaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -630,6 +769,7 @@
 		};
 		FD2B721422B3EBDB00AAB71D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42A1AB7F34555741FE467324 /* Pods-Test.AmeDigitalLodjinhaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -650,6 +790,7 @@
 		};
 		FD2B721622B3EBDB00AAB71D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC0F69FC731274B95292CB77 /* Pods-Test.AmeDigitalLodjinhaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -669,6 +810,7 @@
 		};
 		FD2B721722B3EBDB00AAB71D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C156E2C6E14D9BC4693AC249 /* Pods-Test.AmeDigitalLodjinhaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
