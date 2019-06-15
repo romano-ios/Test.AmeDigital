@@ -34,6 +34,7 @@
 		FD3CE0A322B4947D003F480D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A222B4947D003F480D /* NetworkProvider.swift */; };
 		FD3CE0A522B4949D003F480D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A422B4949D003F480D /* NetworkError.swift */; };
 		FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */; };
+		FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		FD3CE0A222B4947D003F480D /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FD3CE0A422B4949D003F480D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Banner.swift"; sourceTree = "<group>"; };
+		FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Categories.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */,
+				FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */,
 			);
 			path = "Endpoint Providers";
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				FD3CE0A322B4947D003F480D /* NetworkProvider.swift in Sources */,
 				FD2B722622B3ED3800AAB71D /* HomeModels.swift in Sources */,
 				FD2B723622B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift in Sources */,
+				FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */,
 				FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */,
 				FD2B722522B3ED3800AAB71D /* HomeRouter.swift in Sources */,
 				FD3CE09C22B47807003F480D /* Constants.swift in Sources */,
