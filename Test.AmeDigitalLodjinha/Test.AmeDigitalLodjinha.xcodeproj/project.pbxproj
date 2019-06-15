@@ -33,6 +33,7 @@
 		FD3CE0A122B493A7003F480D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A022B493A7003F480D /* Endpoint.swift */; };
 		FD3CE0A322B4947D003F480D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A222B4947D003F480D /* NetworkProvider.swift */; };
 		FD3CE0A522B4949D003F480D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A422B4949D003F480D /* NetworkError.swift */; };
+		FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		FD3CE0A022B493A7003F480D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FD3CE0A222B4947D003F480D /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FD3CE0A422B4949D003F480D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Banner.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,6 @@
 				DC0F69FC731274B95292CB77 /* Pods-Test.AmeDigitalLodjinhaUITests.debug.xcconfig */,
 				C156E2C6E14D9BC4693AC249 /* Pods-Test.AmeDigitalLodjinhaUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -298,8 +299,17 @@
 				FD3CE0A022B493A7003F480D /* Endpoint.swift */,
 				FD3CE0A422B4949D003F480D /* NetworkError.swift */,
 				FD3CE0A222B4947D003F480D /* NetworkProvider.swift */,
+				FDDF59FB22B49A5C0003BA8E /* Endpoint Providers */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		FDDF59FB22B49A5C0003BA8E /* Endpoint Providers */ = {
+			isa = PBXGroup;
+			children = (
+				FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */,
+			);
+			path = "Endpoint Providers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2B71EB22B3EBD900AAB71D /* AppDelegate.swift in Sources */,
+				FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */,
 				FD3CE0A522B4949D003F480D /* NetworkError.swift in Sources */,
 				FD3CE0A322B4947D003F480D /* NetworkProvider.swift in Sources */,
 				FD2B722622B3ED3800AAB71D /* HomeModels.swift in Sources */,
