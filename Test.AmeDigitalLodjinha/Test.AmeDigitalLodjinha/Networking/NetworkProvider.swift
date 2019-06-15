@@ -19,7 +19,8 @@ class NetworkProvider {
         return Promise { seal in
             guard let url = endpoint.url else { return seal.reject(NetworkError.badUrl) }
             
-            URLSession.shared.dataTask(with: url) { data, response, error in
+            let urlRequest = self.getUrlRequest(url: url, httpMethod: endpoint.method.rawValue)
+            URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 guard let data = data else { return seal.reject(NetworkError.emptyResponseDataError) }
                 
                 do {
@@ -30,6 +31,16 @@ class NetworkProvider {
                 }
             }.resume()
         }
+    }
+    
+    private func getUrlRequest(url: URL, httpMethod: String, data: Data? = nil) -> URLRequest {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod
+        urlRequest.httpBody = data
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        return urlRequest
     }
     
 }

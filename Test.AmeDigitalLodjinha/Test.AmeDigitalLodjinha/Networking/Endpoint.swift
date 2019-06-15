@@ -8,11 +8,15 @@
 
 import Foundation
 
+enum HttpMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 struct Endpoint {
-    
     let path: String
+    let method: HttpMethod
     let queryItems: [URLQueryItem]
-    
 }
 
 extension Endpoint {
