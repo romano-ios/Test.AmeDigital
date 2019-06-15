@@ -25,6 +25,8 @@
 		FD2B723822B3FFBD00AAB71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2B723722B3FFBD00AAB71D /* Main.storyboard */; };
 		FD2B723B22B4008500AAB71D /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD2B723A22B4008500AAB71D /* About.storyboard */; };
 		FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B723C22B400BB00AAB71D /* AboutViewController.swift */; };
+		FD3CE09C22B47807003F480D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE09B22B47807003F480D /* Constants.swift */; };
+		FD3CE09E22B479F7003F480D /* LodjinhaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE09D22B479F7003F480D /* LodjinhaUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		FD2B723722B3FFBD00AAB71D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FD2B723A22B4008500AAB71D /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		FD2B723C22B400BB00AAB71D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		FD3CE09B22B47807003F480D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FD3CE09D22B479F7003F480D /* LodjinhaUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodjinhaUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 			children = (
 				FD3CE09A22B47794003F480D /* Assets */,
 				FD2B722B22B3EF4F00AAB71D /* Fonts */,
+				FD3CE09B22B47807003F480D /* Constants.swift */,
+				FD3CE09D22B479F7003F480D /* LodjinhaUtils.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -378,10 +384,12 @@
 				FD2B723622B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift in Sources */,
 				FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */,
 				FD2B722522B3ED3800AAB71D /* HomeRouter.swift in Sources */,
+				FD3CE09C22B47807003F480D /* Constants.swift in Sources */,
 				FD2B722422B3ED3800AAB71D /* HomeWorker.swift in Sources */,
 				FD2B722322B3ED3800AAB71D /* HomePresenter.swift in Sources */,
 				FD2B722722B3ED3800AAB71D /* HomeViewController.swift in Sources */,
 				FD2B722822B3ED3800AAB71D /* HomeInteractor.swift in Sources */,
+				FD3CE09E22B479F7003F480D /* LodjinhaUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
