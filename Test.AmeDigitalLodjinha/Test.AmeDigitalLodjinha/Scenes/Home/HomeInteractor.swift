@@ -13,8 +13,8 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    func doSomething(request: Home.Something.Request)
     func setNavigationLogoView()
+    func getBannersContent()
 }
 
 protocol HomeDataStore {
@@ -25,20 +25,25 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
-    //var name: String = ""
-
-    // MARK: Do something
-
-    func doSomething(request: Home.Something.Request) {
-        worker = HomeWorker()
-        worker?.doSomeWork()
-        
-        let response = Home.Something.Response()
-        presenter?.presentSomething(response: response)
+    
+    init(worker: HomeWorker = HomeWorker()) {
+        self.worker = worker
     }
     
     func setNavigationLogoView() {
         presenter?.presentNavigationLogo()
+    }
+    
+    func getBannersContent() {
+        worker?.getBanners().done(handleGetBannersSuccess).catch(handleGetBannersError)
+    }
+    
+    func handleGetBannersSuccess(_ response: Home.Banner.Response) {
+        presenter?.presentBanners(response: response)
+    }
+    
+    func handleGetBannersError(_ error: Error) {
+        //presenter?.presentBannerError(error: error.localizedDescription)
     }
 
 }

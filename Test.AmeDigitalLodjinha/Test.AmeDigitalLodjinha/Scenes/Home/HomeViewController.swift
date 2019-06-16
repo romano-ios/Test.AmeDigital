@@ -13,8 +13,8 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func displaySomething(viewModel: Home.Something.ViewModel)
     func displayNavigationLogo()
+    func displayBanners(viewModel: Home.Banner.ViewModel)
 }
 
 class HomeViewController: UIViewController {
@@ -64,33 +64,42 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
-        
-        interactor?.setNavigationLogoView()
+        setupView()
     }
 
     // MARK: Do something
 
     //@IBOutlet weak var nameTextField: UITextField!
+    
+    private func setupView() {
+        setupNavigationLogo()
+        setupBanners()
+    }
 
-    func doSomething() {
-        let request = Home.Something.Request()
-        interactor?.doSomething(request: request)
+    private func setupNavigationLogo() {
+        interactor?.setNavigationLogoView()
+    }
+    
+    private func setupBanners() {
+        interactor?.getBannersContent()
     }
 
 }
 
 extension HomeViewController: HomeDisplayLogic {
     
-    func displaySomething(viewModel: Home.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
-    }
-    
     func displayNavigationLogo() {
         let logoNavbar = UIImage(named: "logoNavbar")
         if let logo = logoNavbar {
             let imageView = UIImageView(image: logo)
             self.navigationItem.titleView = imageView
+        }
+    }
+    
+    func displayBanners(viewModel: Home.Banner.ViewModel) {
+        print(#function)
+        viewModel.banners.forEach { banner in
+            print(banner.id, banner.photo)
         }
     }
     

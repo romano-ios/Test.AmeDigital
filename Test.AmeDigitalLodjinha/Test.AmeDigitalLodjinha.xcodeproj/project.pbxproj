@@ -36,6 +36,9 @@
 		FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */; };
 		FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */; };
 		FDDF5A0122B49B960003BA8E /* Endpoint+Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */; };
+		FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12022B5620F00B4B61F /* BaseResponse.swift */; };
+		FDE7B12322B563C600B4B61F /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12222B563C600B4B61F /* Banner.swift */; };
+		FDE7B12622B56E4200B4B61F /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Banner.swift"; sourceTree = "<group>"; };
 		FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Categories.swift"; sourceTree = "<group>"; };
 		FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Products.swift"; sourceTree = "<group>"; };
+		FDE7B12022B5620F00B4B61F /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		FDE7B12222B563C600B4B61F /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2B723422B3F2AE00AAB71D /* Extensions */,
+				FDE7B11F22B5620000B4B61F /* Models */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -316,6 +323,24 @@
 				FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */,
 			);
 			path = "Endpoint Providers";
+			sourceTree = "<group>";
+		};
+		FDE7B11F22B5620000B4B61F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDE7B12022B5620F00B4B61F /* BaseResponse.swift */,
+				FDE7B12422B56E3600B4B61F /* Banner */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FDE7B12422B56E3600B4B61F /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				FDE7B12222B563C600B4B61F /* Banner.swift */,
+				FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +575,7 @@
 			files = (
 				FD2B71EB22B3EBD900AAB71D /* AppDelegate.swift in Sources */,
 				FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */,
+				FDE7B12622B56E4200B4B61F /* BannerViewModel.swift in Sources */,
 				FD3CE0A522B4949D003F480D /* NetworkError.swift in Sources */,
 				FD3CE0A322B4947D003F480D /* NetworkProvider.swift in Sources */,
 				FD2B722622B3ED3800AAB71D /* HomeModels.swift in Sources */,
@@ -557,8 +583,10 @@
 				FDDF5A0122B49B960003BA8E /* Endpoint+Products.swift in Sources */,
 				FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */,
 				FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */,
+				FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */,
 				FD2B722522B3ED3800AAB71D /* HomeRouter.swift in Sources */,
 				FD3CE09C22B47807003F480D /* Constants.swift in Sources */,
+				FDE7B12322B563C600B4B61F /* Banner.swift in Sources */,
 				FD2B722422B3ED3800AAB71D /* HomeWorker.swift in Sources */,
 				FD2B722322B3ED3800AAB71D /* HomePresenter.swift in Sources */,
 				FD2B722722B3ED3800AAB71D /* HomeViewController.swift in Sources */,

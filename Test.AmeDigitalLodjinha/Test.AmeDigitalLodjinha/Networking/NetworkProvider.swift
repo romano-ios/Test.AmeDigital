@@ -23,14 +23,24 @@ class NetworkProvider {
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 guard let data = data else { return seal.reject(NetworkError.emptyResponseDataError) }
                 
-                do {
-                    let decodableObject = try JSONDecoder().decode(T.self, from: data)
-                    return seal.fulfill(decodableObject)
-                } catch {
-                    return seal.reject(NetworkError.mappingError)
+                let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+                
+                if 200...299 ~= statusCode {
+                    do {
+                        let decodableObject = try JSONDecoder().decode(T.self, from: data)
+                        return seal.fulfill(decodableObject)
+                    } catch {
+                        return seal.reject(NetworkError.mappingError)
+                    }
                 }
+                
+                return seal.reject(self.parseErrorFor(statusCode: statusCode))
             }.resume()
         }
+    }
+    
+    private func parseErrorFor(statusCode: Int) -> NetworkError {
+        return .badUrl
     }
     
     private func getUrlRequest(url: URL, httpMethod: String, data: Data? = nil) -> URLRequest {

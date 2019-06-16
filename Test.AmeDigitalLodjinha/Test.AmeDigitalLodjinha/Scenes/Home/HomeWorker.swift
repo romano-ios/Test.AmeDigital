@@ -10,10 +10,14 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import PromiseKit
 
 class HomeWorker {
 
-    func doSomeWork() { }
+    let networkProvider = NetworkProvider.shared
+    
+    func getBanners() -> Promise<Home.Banner.Response> {
+        return networkProvider.request(.getBanners())
+    }
 
 }

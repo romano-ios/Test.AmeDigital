@@ -13,13 +13,21 @@
 import UIKit
 
 enum Home {
-  
-    enum Something {
-        struct Request { }
-        
-        struct Response { }
 
-        struct ViewModel { }
+    enum Banner {
+        class Response: BaseResponse<[BannerModel]> {
+            override init(data: [BannerModel]) {
+                super.init(data: data)
+            }
+            
+            required init(from decoder: Decoder) throws {
+                try super.init(from: decoder)
+            }
+        }
+        
+        struct ViewModel {
+            let banners: [BannerViewModel]
+        }
     }
 
 }

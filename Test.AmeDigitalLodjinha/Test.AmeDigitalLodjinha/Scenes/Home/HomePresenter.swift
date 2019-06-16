@@ -13,23 +13,21 @@
 import UIKit
 
 protocol HomePresentationLogic {
-    func presentSomething(response: Home.Something.Response)
     func presentNavigationLogo()
+    func presentBanners(response: Home.Banner.Response)
 }
 
 class HomePresenter: HomePresentationLogic {
 
     weak var viewController: HomeDisplayLogic?
-
-    // MARK: Do something
-
-    func presentSomething(response: Home.Something.Response) {
-        let viewModel = Home.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
-    }
     
     func presentNavigationLogo() {
         viewController?.displayNavigationLogo()
+    }
+    
+    func presentBanners(response: Home.Banner.Response) {
+        let viewModel: [BannerViewModel] = response.data.map { BannerViewModel(banner: $0) }
+        viewController?.displayBanners(viewModel: Home.Banner.ViewModel(banners: viewModel))
     }
     
 }
