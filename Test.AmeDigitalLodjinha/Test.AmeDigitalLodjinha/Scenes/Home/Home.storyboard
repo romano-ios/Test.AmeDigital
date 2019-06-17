@@ -6,44 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Pacifico-Regular.ttf">
-            <string>Pacifico-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="5Rj-gT-I8b">
-            <objects>
-                <viewController id="tAM-7d-lts" customClass="HomeViewController" customModule="Test_AmeDigitalLodjinha" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="piE-nZ-oc4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAR-CP-VOm">
-                                <rect key="frame" x="155.5" y="435.5" width="103" height="30"/>
-                                <color key="tintColor" red="0.41568627450980389" green="0.23921568627450979" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Pacifico-Regular" family="Pacifico" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cAR-CP-VOm" firstAttribute="centerX" secondItem="eKB-hQ-hmM" secondAttribute="centerX" id="Msu-Zs-Gpm"/>
-                            <constraint firstItem="cAR-CP-VOm" firstAttribute="centerY" secondItem="eKB-hQ-hmM" secondAttribute="centerY" id="zgi-JL-wYc"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="eKB-hQ-hmM"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qLk-OL-DJx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdw-cH-TGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1871.0144927536232" y="170.75892857142856"/>
-        </scene>
         <!--Home-->
         <scene sceneID="eLW-vV-oBK">
             <objects>
@@ -57,12 +22,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tAM-7d-lts" kind="relationship" relationship="rootViewController" id="Zny-ZZ-sFL"/>
+                        <segue destination="EoP-X6-sv1" kind="relationship" relationship="rootViewController" id="qDw-9s-epO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6z-VJ-0Dz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="170.75892857142856"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="wsl-Bh-DaU">
+            <objects>
+                <tableViewController id="EoP-X6-sv1" customClass="HomeViewController" customModule="Test_AmeDigitalLodjinha" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Wd-Wt-C7z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Rkj-k5-mor">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rkj-k5-mor" id="g27-os-24x">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EoP-X6-sv1" id="g3o-80-R75"/>
+                            <outlet property="delegate" destination="EoP-X6-sv1" id="lRR-th-w9E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gTJ-cm-Fjh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3J-9a-GwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="171"/>
         </scene>
     </scenes>
     <resources>

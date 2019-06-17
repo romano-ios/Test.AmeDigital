@@ -17,7 +17,7 @@ protocol HomeDisplayLogic: class {
     func displayBanners(viewModel: Home.Banner.ViewModel)
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UITableViewController {
     
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
