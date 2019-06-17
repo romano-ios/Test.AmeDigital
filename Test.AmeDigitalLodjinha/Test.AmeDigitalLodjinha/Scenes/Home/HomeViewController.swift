@@ -102,13 +102,10 @@ extension HomeViewController: HomeDisplayLogic {
     }
     
     func displayBanners(viewModel: Home.Banner.ViewModel) {
-        let sliderView = ProductsSliderView(images: viewModel.banners.map { $0.photo })
-        sliderView.translatesAutoresizingMaskIntoConstraints = false
-        
+        let sliderView = BannersSliderView(
+            imagesUrl: viewModel.banners.map { $0.photo },
+            adressesUrl: viewModel.banners.map { $0.url })
         self.setupTableViewHeader(contentView: sliderView)
     }
     
 }
-
-
-

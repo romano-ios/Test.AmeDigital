@@ -17,17 +17,20 @@ extension HomeViewController {
         containerView.addSubview(contentView)
         
         self.tableView.tableHeaderView = containerView
-        containerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor).isActive = true
-        containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor).isActive = true
-        containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor),
+            containerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor),
+            containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 200)
+        ])
         
         self.tableView.tableHeaderView?.layoutIfNeeded()
         self.tableView.tableHeaderView = self.tableView.tableHeaderView
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 50
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

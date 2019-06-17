@@ -1,5 +1,5 @@
 //
-//  ProductsSliderView.swift
+//  BannersSliderView.swift
 //  Test.AmeDigitalLodjinha
 //
 //  Created by Leandro Romano on 16/06/19.
@@ -9,17 +9,21 @@
 import UIKit
 import SDWebImage
 
-class ProductsSliderView: UIView {
+class BannersSliderView: UIView {
 
     let kDeviceScreenWidthSize = UIScreen.main.bounds.width
     let kSliderHeight: CGFloat = CGFloat(200)
     
-    let images: [String]
+    var currentPageNumber: Int = 0
+    let imagesUrl: [String]
+    let adressesUrl: [String]
     
-    init(images: [String]) {
-        self.images = images
+    init(imagesUrl: [String], adressesUrl: [String]) {
+        self.imagesUrl = imagesUrl
+        self.adressesUrl = adressesUrl
         super.init(frame: CGRect(x: 0, y: 0, width: kDeviceScreenWidthSize, height: kSliderHeight))
         self.setupViews()
+        self.setupTapGesture()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +33,7 @@ class ProductsSliderView: UIView {
     lazy var contentScrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.kDeviceScreenWidthSize, height: self.kSliderHeight))
         scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: (self.kDeviceScreenWidthSize*CGFloat(self.images.count)), height: self.kSliderHeight)
+        scrollView.contentSize = CGSize(width: (self.kDeviceScreenWidthSize*CGFloat(self.imagesUrl.count)), height: self.kSliderHeight)
         scrollView.isPagingEnabled = true
         
         let imageViews = self.getImageViews(widthFrame: scrollView.frame.width, heightFrame: scrollView.frame.height)
@@ -40,7 +44,7 @@ class ProductsSliderView: UIView {
     
     lazy var pageControlView: UIPageControl = {
         let pageControl = UIPageControl(frame: CGRect(x: 0, y: 180, width: self.kDeviceScreenWidthSize, height: 10))
-        pageControl.numberOfPages = self.images.count
+        pageControl.numberOfPages = self.imagesUrl.count
         pageControl.currentPage = 0
         pageControl.tintColor = .gray
         pageControl.pageIndicatorTintColor = .lightGray
@@ -54,13 +58,25 @@ class ProductsSliderView: UIView {
         self.addSubview(self.contentScrollView)
         self.addSubview(self.pageControlView)
     }
+    
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openBannerLinkInBrowser))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.numberOfTapsRequired = 1
+        self.contentScrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func openBannerLinkInBrowser(_ recognizer: UITapGestureRecognizer) {
+        guard let url = URL(string: self.adressesUrl[self.currentPageNumber]) else { return }
+        UIApplication.shared.openURL(url)
+    }
 
     private func getImageViews(widthFrame: CGFloat, heightFrame: CGFloat) -> [UIImageView] {
         var imageViews = [UIImageView]()
         
-        for i in 0..<self.images.count {
+        for i in 0..<self.imagesUrl.count {
             let imageView = UIImageView()
-            imageView.sd_setImage(with: URL(string: self.images[i]), placeholderImage: UIImage(named: "noPhotoPlaceholder"))
+            imageView.sd_setImage(with: URL(string: self.imagesUrl[i]), placeholderImage: UIImage(named: "noPhotoPlaceholder"))
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFill
             
@@ -75,10 +91,11 @@ class ProductsSliderView: UIView {
     
 }
 
-extension ProductsSliderView: UIScrollViewDelegate {
+extension BannersSliderView: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width)
+        self.currentPageNumber = Int(pageNumber)
         self.pageControlView.currentPage = Int(pageNumber)
     }
     
