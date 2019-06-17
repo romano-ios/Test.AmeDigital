@@ -23,8 +23,6 @@ class HomeViewController: UITableViewController {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
 
-    // MARK: Object lifecycle
-
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -34,8 +32,6 @@ class HomeViewController: UITableViewController {
         super.init(coder: aDecoder)
         setup()
     }
-
-    // MARK: Setup
 
     private func setup() {
         let viewController = self
@@ -50,8 +46,6 @@ class HomeViewController: UITableViewController {
         router.dataStore = interactor
     }
 
-    // MARK: Routing
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let scene = segue.identifier {
             let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
@@ -61,14 +55,10 @@ class HomeViewController: UITableViewController {
         }
     }
 
-    // MARK: View lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
-    // MARK: Do something
 
     //@IBOutlet weak var nameTextField: UITextField!
     
@@ -106,35 +96,19 @@ extension HomeViewController: HomeDisplayLogic {
         let activityView = UIActivityIndicatorView(style: .whiteLarge)
         activityView.center = container.center
         activityView.startAnimating()
-        
         container.addSubview(activityView)
         
-        self.tableView.tableHeaderView = container
+        self.setupTableViewHeader(contentView: container)
     }
     
     func displayBanners(viewModel: Home.Banner.ViewModel) {
-        let images: [String] = viewModel.banners.map { $0.photo }
-        
-        let sliderView = ProductsSliderView(images: images)
+        let sliderView = ProductsSliderView(images: viewModel.banners.map { $0.photo })
         sliderView.translatesAutoresizingMaskIntoConstraints = false
         
-        // 1.
-        let containerView = UIView()
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        // headerView is your actual content.
-        containerView.addSubview(sliderView)
-        
-        // 2.
-        self.tableView.tableHeaderView = containerView
-        // 3.
-        containerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor).isActive = true
-        containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor).isActive = true
-        containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        // 4.
-        self.tableView.tableHeaderView?.layoutIfNeeded()
-        self.tableView.tableHeaderView = self.tableView.tableHeaderView
+        self.setupTableViewHeader(contentView: sliderView)
     }
     
 }
+
+
+

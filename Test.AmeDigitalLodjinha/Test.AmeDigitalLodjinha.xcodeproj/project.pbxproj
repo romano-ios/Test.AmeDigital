@@ -40,6 +40,7 @@
 		FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12022B5620F00B4B61F /* BaseResponse.swift */; };
 		FDE7B12322B563C600B4B61F /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12222B563C600B4B61F /* Banner.swift */; };
 		FDE7B12622B56E4200B4B61F /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */; };
+		FDF4620422B746B000A2FA2F /* HomeViewController+UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4620322B746B000A2FA2F /* HomeViewController+UITableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		FDE7B12022B5620F00B4B61F /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FDE7B12222B563C600B4B61F /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
+		FDF4620322B746B000A2FA2F /* HomeViewController+UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				FDA037D822B71EB0001BFD97 /* Views */,
+				FDF4620222B7468500A2FA2F /* Extensions */,
 				FD2B721D22B3ED3800AAB71D /* HomePresenter.swift */,
 				FD2B721E22B3ED3800AAB71D /* HomeWorker.swift */,
 				FD2B721F22B3ED3800AAB71D /* HomeRouter.swift */,
@@ -352,6 +355,14 @@
 				FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		FDF4620222B7468500A2FA2F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4620322B746B000A2FA2F /* HomeViewController+UITableViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +606,7 @@
 				FD2B723622B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift in Sources */,
 				FDDF5A0122B49B960003BA8E /* Endpoint+Products.swift in Sources */,
 				FDA037DA22B71ECF001BFD97 /* ProductsSliderView.swift in Sources */,
+				FDF4620422B746B000A2FA2F /* HomeViewController+UITableViewController.swift in Sources */,
 				FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */,
 				FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */,
 				FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */,

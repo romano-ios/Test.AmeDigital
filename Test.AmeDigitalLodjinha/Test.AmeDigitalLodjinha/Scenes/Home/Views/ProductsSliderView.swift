@@ -60,7 +60,7 @@ class ProductsSliderView: UIView {
         
         for i in 0..<self.images.count {
             let imageView = UIImageView()
-            imageView.sd_setImage(with: URL(string: self.images[i]))
+            imageView.sd_setImage(with: URL(string: self.images[i]), placeholderImage: UIImage(named: "noPhotoPlaceholder"))
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFill
             
