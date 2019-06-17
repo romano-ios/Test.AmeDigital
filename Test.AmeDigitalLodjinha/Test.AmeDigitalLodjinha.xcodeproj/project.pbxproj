@@ -33,6 +33,7 @@
 		FD3CE0A122B493A7003F480D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A022B493A7003F480D /* Endpoint.swift */; };
 		FD3CE0A322B4947D003F480D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A222B4947D003F480D /* NetworkProvider.swift */; };
 		FD3CE0A522B4949D003F480D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE0A422B4949D003F480D /* NetworkError.swift */; };
+		FDA037DA22B71ECF001BFD97 /* ProductsSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA037D922B71ECF001BFD97 /* ProductsSliderView.swift */; };
 		FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */; };
 		FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */; };
 		FDDF5A0122B49B960003BA8E /* Endpoint+Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */; };
@@ -97,6 +98,7 @@
 		FD3CE0A022B493A7003F480D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FD3CE0A222B4947D003F480D /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FD3CE0A422B4949D003F480D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FDA037D922B71ECF001BFD97 /* ProductsSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsSliderView.swift; sourceTree = "<group>"; };
 		FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Banner.swift"; sourceTree = "<group>"; };
 		FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Categories.swift"; sourceTree = "<group>"; };
 		FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Products.swift"; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		FD2B721C22B3ED1B00AAB71D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FDA037D822B71EB0001BFD97 /* Views */,
 				FD2B721D22B3ED3800AAB71D /* HomePresenter.swift */,
 				FD2B721E22B3ED3800AAB71D /* HomeWorker.swift */,
 				FD2B721F22B3ED3800AAB71D /* HomeRouter.swift */,
@@ -313,6 +316,14 @@
 				FDDF59FB22B49A5C0003BA8E /* Endpoint Providers */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		FDA037D822B71EB0001BFD97 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDA037D922B71ECF001BFD97 /* ProductsSliderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FDDF59FB22B49A5C0003BA8E /* Endpoint Providers */ = {
@@ -581,6 +592,7 @@
 				FD2B722622B3ED3800AAB71D /* HomeModels.swift in Sources */,
 				FD2B723622B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift in Sources */,
 				FDDF5A0122B49B960003BA8E /* Endpoint+Products.swift in Sources */,
+				FDA037DA22B71ECF001BFD97 /* ProductsSliderView.swift in Sources */,
 				FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */,
 				FD2B723D22B400BB00AAB71D /* AboutViewController.swift in Sources */,
 				FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */,

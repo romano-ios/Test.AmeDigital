@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
+    
+    static let mainColor = UIColor(red: 106/255, green: 61/255, blue: 145/255, alpha: 1.0)
     
     static let apiHostUrl = "alodjinha.herokuapp.com"
     

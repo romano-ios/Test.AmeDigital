@@ -14,6 +14,7 @@ import UIKit
 
 protocol HomePresentationLogic {
     func presentNavigationLogo()
+    func presentBannersLoading()
     func presentBanners(response: Home.Banner.Response)
 }
 
@@ -23,6 +24,10 @@ class HomePresenter: HomePresentationLogic {
     
     func presentNavigationLogo() {
         viewController?.displayNavigationLogo()
+    }
+    
+    func presentBannersLoading() {
+        viewController?.displayBannersLoading()
     }
     
     func presentBanners(response: Home.Banner.Response) {

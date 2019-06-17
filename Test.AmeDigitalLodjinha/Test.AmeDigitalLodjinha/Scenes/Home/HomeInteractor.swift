@@ -14,6 +14,7 @@ import UIKit
 
 protocol HomeBusinessLogic {
     func setNavigationLogoView()
+    func setBannersContentLoading()
     func getBannersContent()
 }
 
@@ -32,6 +33,10 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     func setNavigationLogoView() {
         presenter?.presentNavigationLogo()
+    }
+    
+    func setBannersContentLoading() {
+        presenter?.presentBannersLoading()
     }
     
     func getBannersContent() {
