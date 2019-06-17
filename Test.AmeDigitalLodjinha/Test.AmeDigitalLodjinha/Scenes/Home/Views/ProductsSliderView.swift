@@ -20,7 +20,6 @@ class ProductsSliderView: UIView {
         self.images = images
         super.init(frame: CGRect(x: 0, y: 0, width: kDeviceScreenWidthSize, height: kSliderHeight))
         self.setupViews()
-        self.setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,17 +32,8 @@ class ProductsSliderView: UIView {
         scrollView.contentSize = CGSize(width: (self.kDeviceScreenWidthSize*CGFloat(self.images.count)), height: self.kSliderHeight)
         scrollView.isPagingEnabled = true
         
-        for i in 0..<self.images.count {
-            let imageView = UIImageView()
-            imageView.sd_setImage(with: URL(string: self.images[i]), placeholderImage: UIImage(named: "logoSobre"))
-            imageView.clipsToBounds = true
-            imageView.contentMode = .scaleAspectFill
-            
-            let xPosition = self.kDeviceScreenWidthSize*CGFloat(i)
-            imageView.frame = CGRect(x: xPosition, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
-            
-            scrollView.addSubview(imageView)
-        }
+        let imageViews = self.getImageViews(widthFrame: scrollView.frame.width, heightFrame: scrollView.frame.height)
+        imageViews.forEach { scrollView.addSubview($0) }
         
         return scrollView
     }()
@@ -60,14 +50,29 @@ class ProductsSliderView: UIView {
     }()
     
     private func setupViews() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.contentScrollView)
         self.addSubview(self.pageControlView)
     }
-    
-    private func setupConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-    }
 
+    private func getImageViews(widthFrame: CGFloat, heightFrame: CGFloat) -> [UIImageView] {
+        var imageViews = [UIImageView]()
+        
+        for i in 0..<self.images.count {
+            let imageView = UIImageView()
+            imageView.sd_setImage(with: URL(string: self.images[i]))
+            imageView.clipsToBounds = true
+            imageView.contentMode = .scaleAspectFill
+            
+            let xPosition = self.kDeviceScreenWidthSize*CGFloat(i)
+            imageView.frame = CGRect(x: xPosition, y: 0, width: widthFrame, height: heightFrame)
+            
+            imageViews.append(imageView)
+        }
+        
+        return imageViews
+    }
+    
 }
 
 extension ProductsSliderView: UIScrollViewDelegate {
