@@ -40,7 +40,10 @@ class NetworkProvider {
     }
     
     private func parseErrorFor(statusCode: Int) -> NetworkError {
-        return .badUrl
+        if statusCode == 401 { return .unauthorized }
+        if statusCode == 403 { return .forbidden }
+        if statusCode == 404 { return .notFound }
+        return .unknownError
     }
     
     private func getUrlRequest(url: URL, httpMethod: String, data: Data? = nil) -> URLRequest {
