@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductsSliderView: UIView {
 
     let kDeviceScreenWidthSize = UIScreen.main.bounds.width
     let kSliderHeight: CGFloat = CGFloat(200)
     
-    let images: [UIImage]
+    let images: [String]
     
-    init(images: [UIImage]) {
+    init(images: [String]) {
         self.images = images
         super.init(frame: CGRect(x: 0, y: 0, width: kDeviceScreenWidthSize, height: kSliderHeight))
         self.setupViews()
@@ -34,7 +35,7 @@ class ProductsSliderView: UIView {
         
         for i in 0..<self.images.count {
             let imageView = UIImageView()
-            imageView.image = self.images[i]
+            imageView.sd_setImage(with: URL(string: self.images[i]), placeholderImage: UIImage(named: "logoSobre"))
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFill
             
@@ -48,7 +49,7 @@ class ProductsSliderView: UIView {
     }()
     
     lazy var pageControlView: UIPageControl = {
-        let pageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        let pageControl = UIPageControl(frame: CGRect(x: 0, y: 180, width: self.kDeviceScreenWidthSize, height: 10))
         pageControl.numberOfPages = self.images.count
         pageControl.currentPage = 0
         pageControl.tintColor = .gray
@@ -65,25 +66,6 @@ class ProductsSliderView: UIView {
     
     private func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        //self.setupContentScrollViewConstraints()
-        //self.setupPageControlViewConstraints()
-    }
-    
-    private func setupContentScrollViewConstraints() {
-        self.contentScrollView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.contentScrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            self.contentScrollView.widthAnchor.constraint(equalToConstant: self.kDeviceScreenWidthSize),
-            self.contentScrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
-        ])
-    }
-    
-    private func setupPageControlViewConstraints() {
-        self.pageControlView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.pageControlView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.pageControlView.topAnchor.constraint(equalTo: self.contentScrollView.bottomAnchor, constant: -30)
-        ])
     }
 
 }

@@ -113,7 +113,7 @@ extension HomeViewController: HomeDisplayLogic {
     }
     
     func displayBanners(viewModel: Home.Banner.ViewModel) {
-        let images: [UIImage] = viewModel.banners.map { UIImage(named: $0.photo)! }
+        let images: [String] = viewModel.banners.map { $0.photo }
         
         let sliderView = ProductsSliderView(images: images)
         sliderView.translatesAutoresizingMaskIntoConstraints = false

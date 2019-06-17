@@ -8,17 +8,23 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
 
 DEPENDENCIES:
   - PromiseKit (~> 6.8)
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - PromiseKit
+    - SDWebImage
 
 SPEC CHECKSUMS:
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
 
-PODFILE CHECKSUM: bc2357d7545548386c9247e2d18d5cc33ee088de
+PODFILE CHECKSUM: 47acd5acfffb240092adac8b49fad9a4473e3ba9
 
 COCOAPODS: 1.6.1
