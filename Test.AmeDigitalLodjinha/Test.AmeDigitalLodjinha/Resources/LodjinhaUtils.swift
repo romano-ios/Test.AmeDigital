@@ -14,4 +14,13 @@ struct LodjinhaUtils {
         return "\(Constants.apiProductUrl)/\(id)"
     }
     
+    static func convertMoneyToString(_ value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        
+        if let money = formatter.string(from: NSNumber(value: value)) { return money }
+        return ""
+    }
+    
 }

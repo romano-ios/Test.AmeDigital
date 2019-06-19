@@ -29,14 +29,37 @@ extension HomeViewController {
         self.tableView.tableHeaderView = self.tableView.tableHeaderView
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if isBestSellersSection(section) { return CellsUtils.generateSectionHeader(title: Constants.titleBestSellers) }
+        return UIView(frame: CGRect.zero)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        if isBestSellersSection(section) { return interactor?.numberOfBestSellerRows ?? 0 }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Test"
-        return cell
+        if isBestSellersSection(indexPath.section) {
+            if let viewModel = interactor?.cellForBestSellerRow(at: indexPath.row) {
+                return ProductTableViewCellSetup.setup(tableView: tableView, indexPath: indexPath, viewModel: viewModel)
+            }
+        }
+        
+        return tableView.dequeueReusableCell(withIdentifier: CellsIdentifiers.cell.rawValue, for: indexPath)
+    }
+    
+    private func isBestSellersSection(_ section: Int) -> Bool {
+        if section == 1 { return true }
+        return false
     }
     
 }

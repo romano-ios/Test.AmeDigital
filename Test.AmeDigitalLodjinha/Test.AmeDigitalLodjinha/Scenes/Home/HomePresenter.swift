@@ -16,6 +16,9 @@ protocol HomePresentationLogic {
     func presentNavigationLogo()
     func presentBannersLoading()
     func presentBanners(response: Home.Banner.Response)
+    func presentBannersError(_ error: Error)
+    
+    func presentNewData()
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -33,6 +36,14 @@ class HomePresenter: HomePresentationLogic {
     func presentBanners(response: Home.Banner.Response) {
         let viewModel: [BannerViewModel] = response.data.map { BannerViewModel(banner: $0) }
         viewController?.displayBanners(viewModel: Home.Banner.ViewModel(banners: viewModel))
+    }
+    
+    func presentBannersError(_ error: Error) {
+        viewController?.displayBannersError(error)
+    }
+    
+    func presentNewData() {
+        viewController?.displayNewData()
     }
     
 }

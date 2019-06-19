@@ -25,4 +25,6 @@ struct Constants {
     static let httpHeaderKeyAccept = "Accept"
     static let httpHeaderValueApplicationJson = "application/json"
     
+    static let titleBestSellers = "Mais Vendidos"
+    
 }

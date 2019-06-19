@@ -16,6 +16,9 @@ protocol HomeDisplayLogic: class {
     func displayNavigationLogo()
     func displayBannersLoading()
     func displayBanners(viewModel: Home.Banner.ViewModel)
+    func displayBannersError(_ error: Error)
+    
+    func displayNewData()
 }
 
 class HomeViewController: UITableViewController {
@@ -57,6 +60,7 @@ class HomeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         setupView()
     }
 
@@ -65,6 +69,13 @@ class HomeViewController: UITableViewController {
     private func setupView() {
         setupNavigationLogo()
         setupBanners()
+        setupBestSellers()
+    }
+    
+    private func setupTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: CellsIdentifiers.productCell.rawValue)
     }
 
     private func setupNavigationLogo() {
@@ -74,6 +85,10 @@ class HomeViewController: UITableViewController {
     private func setupBanners() {
         interactor?.setBannersContentLoading()
         interactor?.getBannersContent()
+    }
+    
+    private func setupBestSellers() {
+        interactor?.getBestSellers()
     }
 
 }
@@ -88,24 +103,10 @@ extension HomeViewController: HomeDisplayLogic {
         }
     }
     
-    func displayBannersLoading() {
-        let container: UIView = UIView()
-        container.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 200)
-        container.backgroundColor = Constants.mainColor
-        
-        let activityView = UIActivityIndicatorView(style: .whiteLarge)
-        activityView.center = container.center
-        activityView.startAnimating()
-        container.addSubview(activityView)
-        
-        self.setupTableViewHeader(contentView: container)
-    }
-    
-    func displayBanners(viewModel: Home.Banner.ViewModel) {
-        let sliderView = BannersSliderView(
-            imagesUrl: viewModel.banners.map { $0.photo },
-            adressesUrl: viewModel.banners.map { $0.url })
-        self.setupTableViewHeader(contentView: sliderView)
+    func displayNewData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 }

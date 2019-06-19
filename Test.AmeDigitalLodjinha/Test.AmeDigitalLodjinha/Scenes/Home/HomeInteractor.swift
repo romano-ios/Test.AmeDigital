@@ -16,6 +16,10 @@ protocol HomeBusinessLogic {
     func setNavigationLogoView()
     func setBannersContentLoading()
     func getBannersContent()
+    
+    func getBestSellers()
+    func cellForBestSellerRow(at index: Int) -> BestSellerViewModel
+    var numberOfBestSellerRows: Int { get }
 }
 
 protocol HomeDataStore {
@@ -26,6 +30,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
+    var bestSellers = [BestSellerViewModel]()
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
@@ -48,7 +53,28 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func handleGetBannersError(_ error: Error) {
-        //presenter?.presentBannerError(error: error.localizedDescription)
+        presenter?.presentBannersError(error)
+    }
+    
+    func getBestSellers() {
+        worker?.getBestSellers().done(handleGetBestSellersSuccess).catch(handleGetBestSellersError)
+    }
+    
+    func handleGetBestSellersSuccess(_ response: Home.BestSeller.Response) {
+        self.bestSellers = response.data.map { BestSellerViewModel(bestSeller: $0) }
+        presenter?.presentNewData()
+    }
+    
+    func handleGetBestSellersError(_ error: Error) {
+        //
+    }
+    
+    var numberOfBestSellerRows: Int {
+        return self.bestSellers.count
+    }
+    
+    func cellForBestSellerRow(at index: Int) -> BestSellerViewModel {
+        return self.bestSellers[index]
     }
 
 }

@@ -29,5 +29,21 @@ enum Home {
             let banners: [BannerViewModel]
         }
     }
+    
+    enum BestSeller {
+        class Response: BaseResponse<[BestSellerModel]> {
+            override init(data: [BestSellerModel]) {
+                super.init(data: data)
+            }
+            
+            required init(from decoder: Decoder) throws {
+                try super.init(from: decoder)
+            }
+        }
+        
+        struct ViewModel {
+            let bestSellers: [BestSellerViewModel]
+        }
+    }
 
 }

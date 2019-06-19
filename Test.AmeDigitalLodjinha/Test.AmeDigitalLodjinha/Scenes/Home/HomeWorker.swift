@@ -19,5 +19,9 @@ class HomeWorker {
     func getBanners() -> Promise<Home.Banner.Response> {
         return networkProvider.request(.getBanners())
     }
+    
+    func getBestSellers() -> Promise<Home.BestSeller.Response> {
+        return networkProvider.request(.getBestSellerProducts())
+    }
 
 }
