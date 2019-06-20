@@ -11,9 +11,9 @@ import UIKit
 
 struct ProductTableViewCellSetup: ConfigurableCell {
 
-    typealias T = BestSellerViewModel
+    typealias T = ProductViewModel
     
-    static func setup(tableView: UITableView, indexPath: IndexPath, viewModel: BestSellerViewModel) -> UITableViewCell {
+    static func setup(tableView: UITableView, indexPath: IndexPath, viewModel: ProductViewModel) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellsIdentifiers.productCell.rawValue, for: indexPath) as! ProductTableViewCell
         cell.accessoryType = .disclosureIndicator
         cell.productNameLabel.text = viewModel.name

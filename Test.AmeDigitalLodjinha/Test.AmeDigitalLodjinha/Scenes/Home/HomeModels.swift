@@ -31,8 +31,8 @@ enum Home {
     }
     
     enum BestSeller {
-        class Response: BaseResponse<[BestSellerModel]> {
-            override init(data: [BestSellerModel]) {
+        class Response: BaseResponse<[ProductModel]> {
+            override init(data: [ProductModel]) {
                 super.init(data: data)
             }
             
@@ -42,7 +42,7 @@ enum Home {
         }
         
         struct ViewModel {
-            let bestSellers: [BestSellerViewModel]
+            let bestSellers: [ProductViewModel]
         }
     }
     

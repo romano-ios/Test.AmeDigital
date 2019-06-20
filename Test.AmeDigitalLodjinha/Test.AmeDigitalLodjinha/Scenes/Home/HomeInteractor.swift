@@ -22,22 +22,22 @@ protocol HomeBusinessLogic {
     
     var numberOfBestSellerRows: Int { get }
     func getBestSellers()
-    func cellForBestSellerRow(at index: Int) -> BestSellerViewModel
+    func cellForBestSellerRow(at index: Int) -> ProductViewModel
     func didSelectBestSeller(at index: Int)
 }
 
 protocol HomeDataStore {
-    var bestSeller: BestSellerModel? { get }
+    var bestSeller: ProductModel? { get }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
-    var bestSellers = [BestSellerModel]()
+    var bestSellers = [ProductModel]()
     var categories = [CategoryModel]()
     
-    var bestSeller: BestSellerModel?
+    var bestSeller: ProductModel?
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
@@ -105,9 +105,9 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         //
     }
     
-    func cellForBestSellerRow(at index: Int) -> BestSellerViewModel {
+    func cellForBestSellerRow(at index: Int) -> ProductViewModel {
         let bestSeller = self.bestSellers[index]
-        return BestSellerViewModel(bestSeller: bestSeller)
+        return ProductViewModel(product: bestSeller)
     }
     
     func didSelectBestSeller(at index: Int) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BestSellerModel: Codable {
+class ProductModel: Codable {
     
     let id: Int
     let name: String

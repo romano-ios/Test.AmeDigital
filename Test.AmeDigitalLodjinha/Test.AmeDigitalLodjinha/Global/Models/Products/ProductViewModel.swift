@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BestSellerViewModel {
+struct ProductViewModel {
     
     let id: Int
     let name: String
@@ -16,12 +16,12 @@ struct BestSellerViewModel {
     let oldPrice: Double
     let currentPrice: Double
     
-    init(bestSeller: BestSellerModel) {
-        self.id = bestSeller.id
-        self.name = bestSeller.name
-        self.imageUrl = bestSeller.imageUrl
-        self.oldPrice = bestSeller.oldPrice
-        self.currentPrice = bestSeller.currentPrice
+    init(product: ProductModel) {
+        self.id = product.id
+        self.name = product.name
+        self.imageUrl = product.imageUrl
+        self.oldPrice = product.oldPrice
+        self.currentPrice = product.currentPrice
     }
     
 }
