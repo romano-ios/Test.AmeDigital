@@ -27,7 +27,7 @@ protocol HomeBusinessLogic {
 }
 
 protocol HomeDataStore {
-    var bestSeller: ProductModel? { get }
+    var product: ProductModel? { get }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -37,7 +37,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var bestSellers = [ProductModel]()
     var categories = [CategoryModel]()
     
-    var bestSeller: ProductModel?
+    var product: ProductModel?
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
@@ -111,7 +111,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func didSelectBestSeller(at index: Int) {
-        bestSeller = bestSellers[index]
+        product = bestSellers[index]
         presenter?.presentBestSellerDetails()
     }
 

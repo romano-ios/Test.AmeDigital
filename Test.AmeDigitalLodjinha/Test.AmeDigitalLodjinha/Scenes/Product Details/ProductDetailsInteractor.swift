@@ -17,14 +17,15 @@ protocol ProductDetailsBusinessLogic {
 }
 
 protocol ProductDetailsDataStore {
-    //var name: String { get set }
+    var product: ProductModel? { get set }
 }
 
 class ProductDetailsInteractor: ProductDetailsBusinessLogic, ProductDetailsDataStore {
 
     var presenter: ProductDetailsPresentationLogic?
     var worker: ProductDetailsWorker?
-    //var name: String = ""
+    
+    var product: ProductModel?
 
     // MARK: Do something
 

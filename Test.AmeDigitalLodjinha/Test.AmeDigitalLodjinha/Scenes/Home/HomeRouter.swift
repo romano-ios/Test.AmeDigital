@@ -13,7 +13,6 @@
 import UIKit
 
 @objc protocol HomeRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
     func routeToBestSellerDetails()
 }
 
@@ -27,44 +26,21 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     var dataStore: HomeDataStore?
     
     func routeToBestSellerDetails() {
-        let productDetailsViewController = ProductDetailsViewController(
-            nibName: String(describing: ProductDetailsViewController.self),
-            bundle: nil)
-        viewController?.navigationController?.pushViewController(productDetailsViewController, animated: true)
-    }
-
-    // MARK: Routing
-
-    /*
-    func routeToSomewhere(segue: UIStoryboardSegue?) {
-        if let segue = segue {
-            let destinationVC = segue.destination as! SomewhereViewController
-            var destinationDS = destinationVC.router!.dataStore!
-            passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-        } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-            var destinationDS = destinationVC.router!.dataStore!
-            passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-            navigateToSomewhere(source: viewController!, destination: destinationVC)
+        let productDetailsVC = ProductDetailsViewController(nibName: String(describing: ProductDetailsViewController.self), bundle: nil)
+        guard let productDetailsRouter = productDetailsVC.router, var productDetailsDS = productDetailsRouter.dataStore else { return }
+        
+        if let dataStore = dataStore {
+            passDataToProductDetails(source: dataStore, destination: &productDetailsDS)
+            navigateToProductDetails(source: viewController, destination: productDetailsVC)
         }
     }
-    */
-
-    // MARK: Navigation
-
-    /*
-    func navigateToSomewhere(source: HomeViewController, destination: SomewhereViewController) {
-        source.show(destination, sender: nil)
+    
+    func passDataToProductDetails(source: HomeDataStore, destination: inout ProductDetailsDataStore) {
+        destination.product = source.product
     }
-    */
-
-    // MARK: Passing data
-
-    /*
-    func passDataToSomewhere(source: HomeDataStore, destination: inout SomewhereDataStore) {
-        destination.name = source.name
+    
+    func navigateToProductDetails(source: HomeViewController?, destination: ProductDetailsViewController) {
+        source?.navigationController?.pushViewController(destination, animated: true)
     }
-    */
-
+    
 }
