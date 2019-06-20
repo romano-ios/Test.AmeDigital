@@ -11,6 +11,8 @@ import Foundation
 enum CellsIdentifiers: String {
     
     case cell
+    case categoryCell = "categoryCell"
+    case categoryCollectionCell = "categoryCollectionViewId"
     case productCell = "productCell"
     
 }

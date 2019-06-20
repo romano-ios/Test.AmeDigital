@@ -17,7 +17,6 @@ protocol HomeDisplayLogic: class {
     func displayBannersLoading()
     func displayBanners(viewModel: Home.Banner.ViewModel)
     func displayBannersError(_ error: Error)
-    
     func displayNewData()
 }
 
@@ -63,19 +62,25 @@ class HomeViewController: UITableViewController {
         setupTableView()
         setupView()
     }
-
-    //@IBOutlet weak var nameTextField: UITextField!
     
     private func setupView() {
         setupNavigationLogo()
         setupBanners()
+        setupCategories()
         setupBestSellers()
     }
     
     private func setupTableView() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: CellsIdentifiers.productCell.rawValue)
+        tableView.register(
+            UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil),
+            forCellReuseIdentifier: CellsIdentifiers.productCell.rawValue
+        )
+        tableView.register(
+            UINib(nibName: String(describing: CategoryTableViewCell.self), bundle: nil),
+            forCellReuseIdentifier: CellsIdentifiers.categoryCell.rawValue
+        )
     }
 
     private func setupNavigationLogo() {
@@ -85,6 +90,10 @@ class HomeViewController: UITableViewController {
     private func setupBanners() {
         interactor?.setBannersContentLoading()
         interactor?.getBannersContent()
+    }
+    
+    private func setupCategories() {
+        interactor?.getCategories()
     }
     
     private func setupBestSellers() {

@@ -23,5 +23,9 @@ class HomeWorker {
     func getBestSellers() -> Promise<Home.BestSeller.Response> {
         return networkProvider.request(.getBestSellerProducts())
     }
+    
+    func getCategories() -> Promise<Home.Category.Response> {
+        return networkProvider.request(.getCategories())
+    }
 
 }

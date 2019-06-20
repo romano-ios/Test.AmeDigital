@@ -16,7 +16,7 @@ struct Constants {
     static let apiHostUrl = "alodjinha.herokuapp.com"
     
     static let apiBannerUrl = "/banner"
-    static let apiCategoryUrl = "/category"
+    static let apiCategoryUrl = "/categoria"
     
     static let apiProductUrl = "/produto"
     static let apiBestSellersProductsUrl = "/produto/maisvendidos"
@@ -25,6 +25,7 @@ struct Constants {
     static let httpHeaderKeyAccept = "Accept"
     static let httpHeaderValueApplicationJson = "application/json"
     
+    static let titleCategories = "Categorias"
     static let titleBestSellers = "Mais Vendidos"
     
 }

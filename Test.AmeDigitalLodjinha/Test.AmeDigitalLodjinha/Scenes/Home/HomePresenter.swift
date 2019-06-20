@@ -17,7 +17,6 @@ protocol HomePresentationLogic {
     func presentBannersLoading()
     func presentBanners(response: Home.Banner.Response)
     func presentBannersError(_ error: Error)
-    
     func presentNewData()
 }
 

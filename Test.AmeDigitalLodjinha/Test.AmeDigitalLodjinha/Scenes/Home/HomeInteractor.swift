@@ -17,6 +17,9 @@ protocol HomeBusinessLogic {
     func setBannersContentLoading()
     func getBannersContent()
     
+    func getCategories()
+    func cellForCategories() -> [CategoryViewModel]
+    
     func getBestSellers()
     func cellForBestSellerRow(at index: Int) -> BestSellerViewModel
     var numberOfBestSellerRows: Int { get }
@@ -30,15 +33,20 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
-    var bestSellers = [BestSellerViewModel]()
+    var bestSellers = [BestSellerModel]()
+    var categories = [CategoryModel]()
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
     }
     
+    // MARK: - Navigation Logo
+    
     func setNavigationLogoView() {
         presenter?.presentNavigationLogo()
     }
+    
+    // MARK: - Banners
     
     func setBannersContentLoading() {
         presenter?.presentBannersLoading()
@@ -56,12 +64,33 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         presenter?.presentBannersError(error)
     }
     
+    // MARK: - Categories
+    
+    func getCategories() {
+        worker?.getCategories().done(handleGetCategoriesSuccess).catch(handleGetCategoriesError)
+    }
+    
+    func handleGetCategoriesSuccess(_ response: Home.Category.Response) {
+        self.categories = response.data
+        presenter?.presentNewData()
+    }
+    
+    func handleGetCategoriesError(_ error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func cellForCategories() -> [CategoryViewModel] {
+        return self.categories.map { CategoryViewModel(category: $0) }
+    }
+    
+    // MARK: - Best Sellers
+    
     func getBestSellers() {
         worker?.getBestSellers().done(handleGetBestSellersSuccess).catch(handleGetBestSellersError)
     }
     
     func handleGetBestSellersSuccess(_ response: Home.BestSeller.Response) {
-        self.bestSellers = response.data.map { BestSellerViewModel(bestSeller: $0) }
+        self.bestSellers = response.data
         presenter?.presentNewData()
     }
     
@@ -74,7 +103,8 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func cellForBestSellerRow(at index: Int) -> BestSellerViewModel {
-        return self.bestSellers[index]
+        let bestSeller = self.bestSellers[index]
+        return BestSellerViewModel(bestSeller: bestSeller)
     }
 
 }

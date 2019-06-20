@@ -29,17 +29,3 @@ class BestSellerModel: Codable {
     }
     
 }
-
-class CategoryModel: Codable {
-    
-    let id: Int
-    let description: String
-    let imageUrl: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case description = "descricao"
-        case imageUrl = "urlImagem"
-    }
-    
-}

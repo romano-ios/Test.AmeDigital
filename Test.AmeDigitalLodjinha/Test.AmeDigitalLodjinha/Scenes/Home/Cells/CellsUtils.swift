@@ -22,11 +22,21 @@ struct CellsUtils {
         label.textColor = .darkGray
         sectionView.addSubview(label)
         
+        let separator = UIView()
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.backgroundColor = .groupTableViewBackground
+        sectionView.addSubview(separator)
+        
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: sectionView.topAnchor),
             label.leftAnchor.constraint(equalTo: sectionView.leftAnchor, constant: 16),
             label.rightAnchor.constraint(equalTo: sectionView.rightAnchor),
-            label.bottomAnchor.constraint(equalTo: sectionView.bottomAnchor)
+            label.bottomAnchor.constraint(equalTo: sectionView.bottomAnchor),
+            
+            separator.topAnchor.constraint(equalTo: sectionView.bottomAnchor),
+            separator.widthAnchor.constraint(equalTo: sectionView.widthAnchor),
+            separator.heightAnchor.constraint(equalToConstant: 1),
+            separator.centerXAnchor.constraint(equalTo: sectionView.centerXAnchor)
         ])
         
         return sectionView
