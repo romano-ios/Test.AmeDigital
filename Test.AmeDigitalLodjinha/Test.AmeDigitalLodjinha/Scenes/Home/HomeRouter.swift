@@ -14,6 +14,7 @@ import UIKit
 
 @objc protocol HomeRoutingLogic {
     //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToBestSellerDetails()
 }
 
 protocol HomeDataPassing {
@@ -24,6 +25,12 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
 
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
+    
+    func routeToBestSellerDetails() {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let destionationViewController = storyboard.instantiateViewController(withIdentifier: "bestSellerDetailsVC")
+        viewController?.navigationController?.pushViewController(destionationViewController, animated: true)
+    }
 
     // MARK: Routing
 

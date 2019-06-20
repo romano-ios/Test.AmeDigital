@@ -20,13 +20,14 @@ protocol HomeBusinessLogic {
     func getCategories()
     func cellForCategories() -> [CategoryViewModel]
     
+    var numberOfBestSellerRows: Int { get }
     func getBestSellers()
     func cellForBestSellerRow(at index: Int) -> BestSellerViewModel
-    var numberOfBestSellerRows: Int { get }
+    func didSelectBestSeller(at index: Int)
 }
 
 protocol HomeDataStore {
-    //var name: String { get set }
+    var bestSeller: BestSellerModel? { get }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -35,6 +36,8 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var worker: HomeWorker?
     var bestSellers = [BestSellerModel]()
     var categories = [CategoryModel]()
+    
+    var bestSeller: BestSellerModel?
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
@@ -85,6 +88,10 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     // MARK: - Best Sellers
     
+    var numberOfBestSellerRows: Int {
+        return self.bestSellers.count
+    }
+    
     func getBestSellers() {
         worker?.getBestSellers().done(handleGetBestSellersSuccess).catch(handleGetBestSellersError)
     }
@@ -98,13 +105,14 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         //
     }
     
-    var numberOfBestSellerRows: Int {
-        return self.bestSellers.count
-    }
-    
     func cellForBestSellerRow(at index: Int) -> BestSellerViewModel {
         let bestSeller = self.bestSellers[index]
         return BestSellerViewModel(bestSeller: bestSeller)
+    }
+    
+    func didSelectBestSeller(at index: Int) {
+        bestSeller = bestSellers[index]
+        presenter?.presentBestSellerDetails()
     }
 
 }

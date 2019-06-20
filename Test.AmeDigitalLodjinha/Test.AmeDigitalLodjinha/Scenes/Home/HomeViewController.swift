@@ -18,6 +18,7 @@ protocol HomeDisplayLogic: class {
     func displayBanners(viewModel: Home.Banner.ViewModel)
     func displayBannersError(_ error: Error)
     func displayNewData()
+    func displayBestSellerDetails()
 }
 
 class HomeViewController: UITableViewController {
@@ -116,6 +117,10 @@ extension HomeViewController: HomeDisplayLogic {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    func displayBestSellerDetails() {
+        router?.routeToBestSellerDetails()
     }
     
 }

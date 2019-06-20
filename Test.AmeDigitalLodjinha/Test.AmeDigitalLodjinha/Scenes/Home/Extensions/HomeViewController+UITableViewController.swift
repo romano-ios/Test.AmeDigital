@@ -53,6 +53,11 @@ extension HomeViewController {
         return tableView.dequeueReusableCell(withIdentifier: CellsIdentifiers.cell.rawValue, for: indexPath)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        interactor?.didSelectBestSeller(at: indexPath.row)
+    }
+    
     func setupTableViewHeader(contentView: UIView) {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +73,7 @@ extension HomeViewController {
             containerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor),
             containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
             containerView.heightAnchor.constraint(equalToConstant: 200)
-            ])
+        ])
         
         self.tableView.tableHeaderView?.layoutIfNeeded()
         self.tableView.tableHeaderView = self.tableView.tableHeaderView

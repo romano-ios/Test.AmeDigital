@@ -213,6 +213,13 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		FD03573F22BC3594002EE5B5 /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
 		FD2B71DE22B3EBD900AAB71D = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2B721C22B3ED1B00AAB71D /* Home */,
+				FD03573F22BC3594002EE5B5 /* Product Details */,
 				FD2B723922B4006F00AAB71D /* About */,
 			);
 			path = Scenes;
@@ -891,6 +899,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Test.AmeDigitalLodjinha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -910,6 +919,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Test.AmeDigitalLodjinha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
