@@ -49,19 +49,20 @@ class HomeViewController: UITableViewController {
         router.dataStore = interactor
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     private func setupView() {
@@ -106,10 +107,9 @@ class HomeViewController: UITableViewController {
 extension HomeViewController: HomeDisplayLogic {
     
     func displayNavigationLogo() {
-        let logoNavbar = UIImage(named: "logoNavbar")
-        if let logo = logoNavbar {
-            let imageView = UIImageView(image: logo)
-            self.navigationItem.titleView = imageView
+        self.navigationItem.title = "Home"
+        if let logo = UIImage(named: "logoNavbar") {
+            self.navigationItem.titleView = UIImageView(image: logo)
         }
     }
     

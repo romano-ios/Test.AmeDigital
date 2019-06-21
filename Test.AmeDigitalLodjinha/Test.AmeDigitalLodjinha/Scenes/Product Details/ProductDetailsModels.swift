@@ -13,13 +13,27 @@
 import UIKit
 
 enum ProductDetails {
-  
-    enum Something {
-        struct Request { }
+    
+    struct ViewModel {
         
-        struct Response { }
-
-        struct ViewModel { }
+        let id: Int
+        let name: String
+        let description: String
+        let category: String
+        let imageUrl: String
+        let oldPrice: Double
+        let currentPrice: Double
+        
+        init(product: ProductModel) {
+            self.id = product.id
+            self.name = product.name
+            self.description = product.description
+            self.category = product.category.description
+            self.imageUrl = product.imageUrl
+            self.oldPrice = product.oldPrice
+            self.currentPrice = product.currentPrice
+        }
+        
     }
 
 }

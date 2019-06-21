@@ -13,15 +13,14 @@
 import UIKit
 
 protocol ProductDetailsDisplayLogic: class {
-    func displaySomething(viewModel: ProductDetails.Something.ViewModel)
+    func displayProductDetails(viewModel: ProductDetails.ViewModel)
+    func displayReserveProductButton()
 }
 
-class ProductDetailsViewController: UIViewController, ProductDetailsDisplayLogic {
+class ProductDetailsViewController: UIViewController {
 
     var interactor: ProductDetailsBusinessLogic?
     var router: (NSObjectProtocol & ProductDetailsRoutingLogic & ProductDetailsDataPassing)?
-
-    // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -32,8 +31,6 @@ class ProductDetailsViewController: UIViewController, ProductDetailsDisplayLogic
         super.init(coder: aDecoder)
         setup()
     }
-
-    // MARK: Setup
 
     private func setup() {
         let viewController = self
@@ -48,35 +45,46 @@ class ProductDetailsViewController: UIViewController, ProductDetailsDisplayLogic
         router.dataStore = interactor
     }
 
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-
-    // MARK: View lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        requestProductDetails()
     }
-
-    // MARK: Do something
-
-    //@IBOutlet weak var nameTextField: UITextField!
-
-    func doSomething() {
-        let request = ProductDetails.Something.Request()
-        interactor?.doSomething(request: request)
+    
+    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var productOldPriceLabel: UILabel!
+    @IBOutlet weak var productCurrentPriceLabel: UILabel!
+    @IBOutlet weak var productDescriptionLabel: UILabel!
+    
+    func requestProductDetails() {
+        interactor?.requestProductDetails()
     }
+    
+}
 
-    func displaySomething(viewModel: ProductDetails.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+extension ProductDetailsViewController: ProductDetailsDisplayLogic {
+    
+    func displayProductDetails(viewModel: ProductDetails.ViewModel) {
+        title = viewModel.category
+        productImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: UIImage(named: "noProductPlaceholder"))
+        productNameLabel.text = viewModel.name
+        productOldPriceLabel.text = "De: \(LodjinhaUtils.convertMoneyToString(viewModel.oldPrice))"
+        productCurrentPriceLabel.text = "Por: \(LodjinhaUtils.convertMoneyToString(viewModel.currentPrice))"
+        productDescriptionLabel.attributedText = viewModel.description.htmlToAttributedString
+        productDescriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+    }
+    
+    func displayReserveProductButton() {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let componentHeight: CGFloat = 74
+        var yPosition = window.frame.size.height - componentHeight
+        
+        if #available(iOS 11.0, *) {
+            yPosition -= window.safeAreaInsets.bottom
+        }
+        
+        let reserveProductView = ReserveProductView(frame: CGRect(x: 0, y: yPosition, width: window.frame.size.width, height: componentHeight))
+        self.view.addSubview(reserveProductView)
     }
     
 }

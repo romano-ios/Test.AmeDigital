@@ -15,6 +15,11 @@ class AboutViewController: UIViewController {
         self.setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     private func setupView() {
         title = "Sobre"
     }

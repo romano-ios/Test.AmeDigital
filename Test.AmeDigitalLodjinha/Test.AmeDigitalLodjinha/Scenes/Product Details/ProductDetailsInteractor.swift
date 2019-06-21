@@ -13,7 +13,7 @@
 import UIKit
 
 protocol ProductDetailsBusinessLogic {
-    func doSomething(request: ProductDetails.Something.Request)
+    func requestProductDetails()
 }
 
 protocol ProductDetailsDataStore {
@@ -24,17 +24,12 @@ class ProductDetailsInteractor: ProductDetailsBusinessLogic, ProductDetailsDataS
 
     var presenter: ProductDetailsPresentationLogic?
     var worker: ProductDetailsWorker?
-    
     var product: ProductModel?
-
-    // MARK: Do something
-
-    func doSomething(request: ProductDetails.Something.Request) {
-        worker = ProductDetailsWorker()
-        worker?.doSomeWork()
-        
-        let response = ProductDetails.Something.Response()
-        presenter?.presentSomething(response: response)
+    
+    func requestProductDetails() {
+        if let product = self.product {
+            presenter?.presentProductDetails(product: product)
+        }
     }
 
 }
