@@ -18,7 +18,7 @@ struct ProductTableViewCellSetup: ConfigurableCell {
         cell.accessoryType = .disclosureIndicator
         cell.productNameLabel.text = viewModel.name
         cell.productImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: UIImage(named: "noProductPlaceholder"))
-        cell.productOldPriceLabel.text = "De: \(LodjinhaUtils.convertMoneyToString(viewModel.oldPrice))"
+        cell.productOldPriceLabel.attributedText = "De: \(LodjinhaUtils.convertMoneyToString(viewModel.oldPrice))".toStrikethroughStyle
         cell.productCurrentPriceLabel.text = "Por: \(LodjinhaUtils.convertMoneyToString(viewModel.currentPrice))"
         
         return cell

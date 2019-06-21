@@ -14,6 +14,9 @@ import UIKit
 
 protocol ProductDetailsPresentationLogic {
     func presentProductDetails(product: ProductModel)
+    func presentLoadingStateForReserveRequest()
+    func presentSuccessReserveMessage()
+    func presentErrorReserveMessage(_ error: Error)
 }
 
 class ProductDetailsPresenter: ProductDetailsPresentationLogic {
@@ -23,6 +26,20 @@ class ProductDetailsPresenter: ProductDetailsPresentationLogic {
     func presentProductDetails(product: ProductModel) {
         viewController?.displayProductDetails(viewModel: ProductDetails.ViewModel(product: product))
         viewController?.displayReserveProductButton()
+    }
+    
+    func presentLoadingStateForReserveRequest() {
+        viewController?.disableReserveProductButton()
+    }
+    
+    func presentSuccessReserveMessage() {
+        viewController?.disableReserveProductButton()
+        viewController?.displaySuccessReserveMessage()
+    }
+    
+    func presentErrorReserveMessage(_ error: Error) {
+        viewController?.enableReserveProductButton()
+        viewController?.displayErrorReserveMessage(errorMessage: error.localizedDescription)
     }
     
 }

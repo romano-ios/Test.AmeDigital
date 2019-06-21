@@ -11,9 +11,14 @@
 //
 
 import UIKit
+import PromiseKit
 
 class ProductDetailsWorker {
 
-    func doSomeWork() { }
+    let networkProvider = NetworkProvider.shared
+    
+    func requestReserveForProduct(id productId: Int) -> Promise<ProductDetails.Reserve.Response> {
+        return networkProvider.request(.reserveProductBy(id: productId))
+    }
 
 }

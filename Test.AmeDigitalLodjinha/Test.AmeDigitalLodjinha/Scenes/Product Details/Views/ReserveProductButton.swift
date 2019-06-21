@@ -28,10 +28,21 @@ class ReserveProductButton: UIButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            backgroundColor =
+                isEnabled
+                ? UIColor(red: 94/255, green: 42/255, blue: 131/255, alpha: 1.0)
+                : .lightGray
+        }
+    }
+    
     private func setup() {
         self.backgroundColor = UIColor(red: 94/255, green: 42/255, blue: 131/255, alpha: 1.0)
         self.setTitle("Reservar", for: .normal)
+        self.setTitle("Reservando...", for: .disabled)
         self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(.darkGray, for: .disabled)
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         self.layer.cornerRadius = 6
     }

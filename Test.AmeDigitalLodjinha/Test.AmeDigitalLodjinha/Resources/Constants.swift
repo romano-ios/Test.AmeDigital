@@ -28,4 +28,10 @@ struct Constants {
     static let titleCategories = "Categorias"
     static let titleBestSellers = "Mais Vendidos"
     
+    static let reserveSuccessTitle = "Sucesso!"
+    static let reserveSuccessMessage = "O seu produto foi reservado com sucesso."
+    static let reserveErrorTitle = "Erro"
+    static let reserveErrorMessage = "Não foi possível reservar o produto. Tente novamente."
+    static let reserveCloseActionMessage = "Fechar"
+    
 }

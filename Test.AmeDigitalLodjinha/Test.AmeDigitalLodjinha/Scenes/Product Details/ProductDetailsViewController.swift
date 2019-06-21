@@ -15,6 +15,10 @@ import UIKit
 protocol ProductDetailsDisplayLogic: class {
     func displayProductDetails(viewModel: ProductDetails.ViewModel)
     func displayReserveProductButton()
+    func enableReserveProductButton()
+    func disableReserveProductButton()
+    func displaySuccessReserveMessage()
+    func displayErrorReserveMessage(errorMessage: String)
 }
 
 class ProductDetailsViewController: UIViewController {
@@ -56,6 +60,8 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productCurrentPriceLabel: UILabel!
     @IBOutlet weak var productDescriptionLabel: UILabel!
     
+    private var reserveProductButton: ReserveProductButton?
+    
     func requestProductDetails() {
         interactor?.requestProductDetails()
     }
@@ -68,7 +74,7 @@ extension ProductDetailsViewController: ProductDetailsDisplayLogic {
         title = viewModel.category
         productImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: UIImage(named: "noProductPlaceholder"))
         productNameLabel.text = viewModel.name
-        productOldPriceLabel.text = "De: \(LodjinhaUtils.convertMoneyToString(viewModel.oldPrice))"
+        productOldPriceLabel.attributedText = "De: \(LodjinhaUtils.convertMoneyToString(viewModel.oldPrice))".toStrikethroughStyle
         productCurrentPriceLabel.text = "Por: \(LodjinhaUtils.convertMoneyToString(viewModel.currentPrice))"
         productDescriptionLabel.attributedText = viewModel.description.htmlToAttributedString
         productDescriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -84,7 +90,46 @@ extension ProductDetailsViewController: ProductDetailsDisplayLogic {
         }
         
         let reserveProductView = ReserveProductView(frame: CGRect(x: 0, y: yPosition, width: window.frame.size.width, height: componentHeight))
+        reserveProductView.reserveProductButton.addTarget(self, action: #selector(requestReserveProduct), for: .touchUpInside)
+        
+        self.reserveProductButton = reserveProductView.reserveProductButton
         self.view.addSubview(reserveProductView)
+    }
+    
+    @objc func requestReserveProduct(sender: UIButton!) {
+        interactor?.requestProductReserve()
+    }
+    
+    func enableReserveProductButton() {
+        self.reserveProductButton?.isEnabled = true
+    }
+    
+    func disableReserveProductButton() {
+        self.reserveProductButton?.isEnabled = false
+    }
+    
+    func displaySuccessReserveMessage() {
+        let alert = UIAlertController(
+            title: Constants.reserveSuccessTitle,
+            message: Constants.reserveSuccessMessage,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: Constants.reserveCloseActionMessage, style: .default, handler: { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    func displayErrorReserveMessage(errorMessage: String) {
+        let alert = UIAlertController(
+            title: Constants.reserveErrorTitle,
+            message: "\(Constants.reserveErrorMessage)\n\n\(errorMessage)",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: Constants.reserveCloseActionMessage, style: .default))
+        
+        present(alert, animated: true)
     }
     
 }

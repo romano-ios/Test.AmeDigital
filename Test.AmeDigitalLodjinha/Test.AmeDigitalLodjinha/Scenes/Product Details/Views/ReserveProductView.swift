@@ -25,7 +25,7 @@ class ReserveProductView: UIView {
         return separatorView
     }()
     
-    private lazy var reserveProductButton: ReserveProductButton = {
+    public lazy var reserveProductButton: ReserveProductButton = {
         let button = ReserveProductButton()
         return button
     }()

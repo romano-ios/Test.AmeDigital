@@ -35,5 +35,11 @@ enum ProductDetails {
         }
         
     }
+    
+    enum Reserve {
+        struct Response: Codable {
+            let result: String
+        }
+    }
 
 }
