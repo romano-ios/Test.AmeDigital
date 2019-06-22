@@ -40,7 +40,11 @@ extension HomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isCategoriesSection(indexPath.section) {
             if let viewModel = interactor?.cellForCategories() {
-                return CategoryTableViewCellSetup.setup(tableView: tableView, indexPath: indexPath, viewModel: viewModel)
+                let categoriesCell = CategoryTableViewCellSetup.setup(tableView: tableView, indexPath: indexPath, viewModel: viewModel)
+                if case let cell as CategoryTableViewCell = categoriesCell {
+                    cell.interactor = self.interactor
+                }
+                return categoriesCell
             }
         }
         

@@ -13,6 +13,7 @@ class CategoryTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var categories: [CategoryViewModel]!
+    var interactor: HomeBusinessLogic?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,6 +52,10 @@ extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.categoryImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: UIImage(named: "noProductPlaceholder"))
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        interactor?.didSelectCategory(at: indexPath.row)
     }
     
 }

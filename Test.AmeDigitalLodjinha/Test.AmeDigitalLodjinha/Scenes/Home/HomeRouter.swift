@@ -14,6 +14,7 @@ import UIKit
 
 @objc protocol HomeRoutingLogic {
     func routeToBestSellerDetails()
+    func routeToProductsListByCategory()
 }
 
 protocol HomeDataPassing {
@@ -31,7 +32,7 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
         
         if let dataStore = dataStore {
             passDataToProductDetails(source: dataStore, destination: &productDetailsDS)
-            navigateToProductDetails(source: viewController, destination: productDetailsVC)
+            navigateTo(productDetailsVC, from: viewController)
         }
     }
     
@@ -39,7 +40,21 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
         destination.product = source.product
     }
     
-    func navigateToProductDetails(source: HomeViewController?, destination: ProductDetailsViewController) {
+    func routeToProductsListByCategory() {
+        let productListVC = ProductListViewController(nibName: String(describing: ProductListViewController.self), bundle: nil)
+        guard let productListRouter = productListVC.router, var productListDS = productListRouter.dataStore else { return }
+        
+        if let dataStore = dataStore {
+            passDataToProductList(source: dataStore, destination: &productListDS)
+            navigateTo(productListVC, from: viewController)
+        }
+    }
+    
+    func passDataToProductList(source: HomeDataStore, destination: inout ProductListDataStore) {
+        destination.category = source.category
+    }
+    
+    func navigateTo(_ destination: UIViewController, from source: HomeViewController?) {
         source?.navigationController?.pushViewController(destination, animated: true)
     }
     

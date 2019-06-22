@@ -34,4 +34,8 @@ struct Constants {
     static let reserveErrorMessage = "Não foi possível reservar o produto. Tente novamente."
     static let reserveCloseActionMessage = "Fechar"
     
+    static let productListErrorTitle = "Erro"
+    static let productListErrorMessage = "Erro"
+    static let productListErrorCloseActionMessage = "Fechar"
+    
 }

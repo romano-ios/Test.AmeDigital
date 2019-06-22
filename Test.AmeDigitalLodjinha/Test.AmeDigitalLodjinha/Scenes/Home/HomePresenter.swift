@@ -19,6 +19,7 @@ protocol HomePresentationLogic {
     func presentBannersError(_ error: Error)
     func presentNewData()
     func presentBestSellerDetails()
+    func presentProductsListByCategory()
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -48,6 +49,10 @@ class HomePresenter: HomePresentationLogic {
     
     func presentBestSellerDetails() {
         viewController?.displayBestSellerDetails()
+    }
+    
+    func presentProductsListByCategory() {
+        viewController?.displayProductsListByCategory()
     }
     
 }

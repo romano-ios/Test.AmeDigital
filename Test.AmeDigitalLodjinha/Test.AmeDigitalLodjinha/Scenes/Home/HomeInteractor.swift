@@ -19,6 +19,7 @@ protocol HomeBusinessLogic {
     
     func getCategories()
     func cellForCategories() -> [CategoryViewModel]
+    func didSelectCategory(at index: Int)
     
     var numberOfBestSellerRows: Int { get }
     func getBestSellers()
@@ -28,6 +29,7 @@ protocol HomeBusinessLogic {
 
 protocol HomeDataStore {
     var product: ProductModel? { get }
+    var category: CategoryModel? { get }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -38,6 +40,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var categories = [CategoryModel]()
     
     var product: ProductModel?
+    var category: CategoryModel?
     
     init(worker: HomeWorker = HomeWorker()) {
         self.worker = worker
@@ -84,6 +87,11 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     func cellForCategories() -> [CategoryViewModel] {
         return self.categories.map { CategoryViewModel(category: $0) }
+    }
+    
+    func didSelectCategory(at index: Int) {
+        category = categories[index]
+        presenter?.presentProductsListByCategory()
     }
     
     // MARK: - Best Sellers

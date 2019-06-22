@@ -63,6 +63,13 @@
 		FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */; };
 		FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */; };
 		FDDF5A0122B49B960003BA8E /* Endpoint+Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */; };
+		FDE737C822BED0CA00549CAB /* ProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737C222BED0CA00549CAB /* ProductListPresenter.swift */; };
+		FDE737C922BED0CA00549CAB /* ProductListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737C322BED0CA00549CAB /* ProductListWorker.swift */; };
+		FDE737CA22BED0CA00549CAB /* ProductListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737C422BED0CA00549CAB /* ProductListRouter.swift */; };
+		FDE737CB22BED0CA00549CAB /* ProductListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737C522BED0CA00549CAB /* ProductListModels.swift */; };
+		FDE737CC22BED0CA00549CAB /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737C622BED0CA00549CAB /* ProductListViewController.swift */; };
+		FDE737CD22BED0CA00549CAB /* ProductListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737C722BED0CA00549CAB /* ProductListInteractor.swift */; };
+		FDE737D122BED96700549CAB /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE737D022BED96700549CAB /* ProductListViewController.xib */; };
 		FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12022B5620F00B4B61F /* BaseResponse.swift */; };
 		FDE7B12322B563C600B4B61F /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12222B563C600B4B61F /* Banner.swift */; };
 		FDE7B12622B56E4200B4B61F /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */; };
@@ -155,6 +162,13 @@
 		FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Banner.swift"; sourceTree = "<group>"; };
 		FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Categories.swift"; sourceTree = "<group>"; };
 		FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Products.swift"; sourceTree = "<group>"; };
+		FDE737C222BED0CA00549CAB /* ProductListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenter.swift; sourceTree = "<group>"; };
+		FDE737C322BED0CA00549CAB /* ProductListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListWorker.swift; sourceTree = "<group>"; };
+		FDE737C422BED0CA00549CAB /* ProductListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouter.swift; sourceTree = "<group>"; };
+		FDE737C522BED0CA00549CAB /* ProductListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModels.swift; sourceTree = "<group>"; };
+		FDE737C622BED0CA00549CAB /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		FDE737C722BED0CA00549CAB /* ProductListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractor.swift; sourceTree = "<group>"; };
+		FDE737D022BED96700549CAB /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		FDE7B12022B5620F00B4B61F /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FDE7B12222B563C600B4B61F /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
@@ -334,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				FD2B721C22B3ED1B00AAB71D /* Home */,
+				FDE737C122BED09F00549CAB /* Product List */,
 				FD03573F22BC3594002EE5B5 /* Product Details */,
 				FD2B723922B4006F00AAB71D /* About */,
 			);
@@ -468,6 +483,20 @@
 				FDDF5A0022B49B960003BA8E /* Endpoint+Products.swift */,
 			);
 			path = "Endpoint Providers";
+			sourceTree = "<group>";
+		};
+		FDE737C122BED09F00549CAB /* Product List */ = {
+			isa = PBXGroup;
+			children = (
+				FDE737C222BED0CA00549CAB /* ProductListPresenter.swift */,
+				FDE737C322BED0CA00549CAB /* ProductListWorker.swift */,
+				FDE737C422BED0CA00549CAB /* ProductListRouter.swift */,
+				FDE737C522BED0CA00549CAB /* ProductListModels.swift */,
+				FDE737C722BED0CA00549CAB /* ProductListInteractor.swift */,
+				FDE737C622BED0CA00549CAB /* ProductListViewController.swift */,
+				FDE737D022BED96700549CAB /* ProductListViewController.xib */,
+			);
+			path = "Product List";
 			sourceTree = "<group>";
 		};
 		FDE7B11F22B5620000B4B61F /* Models */ = {
@@ -617,6 +646,7 @@
 				FD3AEC0F22B99116000E2A6B /* ProductTableViewCell.xib in Resources */,
 				FD2B71F522B3EBDA00AAB71D /* LaunchScreen.storyboard in Resources */,
 				FD2B71F222B3EBDA00AAB71D /* Assets.xcassets in Resources */,
+				FDE737D122BED96700549CAB /* ProductListViewController.xib in Resources */,
 				FD79A1A522BC3A3A003ED309 /* ProductDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,6 +775,7 @@
 				FD3CE0A522B4949D003F480D /* NetworkError.swift in Sources */,
 				FD3CE0A322B4947D003F480D /* NetworkProvider.swift in Sources */,
 				FD2B722622B3ED3800AAB71D /* HomeModels.swift in Sources */,
+				FDE737C822BED0CA00549CAB /* ProductListPresenter.swift in Sources */,
 				FD2B723622B3F2B900AAB71D /* UIViewController+StatusBarStyle.swift in Sources */,
 				FDDF5A0122B49B960003BA8E /* Endpoint+Products.swift in Sources */,
 				FD79A19F22BC3A26003ED309 /* ProductDetailsWorker.swift in Sources */,
@@ -753,6 +784,7 @@
 				FD79A1A022BC3A26003ED309 /* ProductDetailsRouter.swift in Sources */,
 				FDF4620422B746B000A2FA2F /* HomeViewController+UITableViewController.swift in Sources */,
 				FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */,
+				FDE737C922BED0CA00549CAB /* ProductListWorker.swift in Sources */,
 				FD3AEC1622B9BD67000E2A6B /* CellsIdentifiers.swift in Sources */,
 				FD03573C22BBB6E2002EE5B5 /* CategoryTableViewCellSetup.swift in Sources */,
 				FD79A1A322BC3A26003ED309 /* ProductDetailsInteractor.swift in Sources */,
@@ -768,6 +800,7 @@
 				FD2B722422B3ED3800AAB71D /* HomeWorker.swift in Sources */,
 				FD2B722322B3ED3800AAB71D /* HomePresenter.swift in Sources */,
 				FD03573A22BAFFCE002EE5B5 /* CategoryViewModel.swift in Sources */,
+				FDE737CB22BED0CA00549CAB /* ProductListModels.swift in Sources */,
 				FD3AEC1C22B9C8BC000E2A6B /* ConfigurableCell.swift in Sources */,
 				FD79A1AC22BC705F003ED309 /* ReserveProductButton.swift in Sources */,
 				FD2B722722B3ED3800AAB71D /* HomeViewController.swift in Sources */,
@@ -776,8 +809,11 @@
 				FD79A19E22BC3A26003ED309 /* ProductDetailsPresenter.swift in Sources */,
 				FD3CE0A122B493A7003F480D /* Endpoint.swift in Sources */,
 				FD79A1A122BC3A26003ED309 /* ProductDetailsModels.swift in Sources */,
+				FDE737CC22BED0CA00549CAB /* ProductListViewController.swift in Sources */,
+				FDE737CA22BED0CA00549CAB /* ProductListRouter.swift in Sources */,
 				FD3AEC1E22B9CBB7000E2A6B /* HomeViewController+Banners.swift in Sources */,
 				FD3CE09E22B479F7003F480D /* LodjinhaUtils.swift in Sources */,
+				FDE737CD22BED0CA00549CAB /* ProductListInteractor.swift in Sources */,
 				FD03573822BAFF7B002EE5B5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

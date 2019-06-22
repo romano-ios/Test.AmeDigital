@@ -19,6 +19,7 @@ protocol HomeDisplayLogic: class {
     func displayBannersError(_ error: Error)
     func displayNewData()
     func displayBestSellerDetails()
+    func displayProductsListByCategory()
 }
 
 class HomeViewController: UITableViewController {
@@ -121,6 +122,10 @@ extension HomeViewController: HomeDisplayLogic {
     
     func displayBestSellerDetails() {
         router?.routeToBestSellerDetails()
+    }
+    
+    func displayProductsListByCategory() {
+        router?.routeToProductsListByCategory()
     }
     
 }
