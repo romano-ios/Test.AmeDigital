@@ -12,14 +12,6 @@
 
 import UIKit
 
-protocol ProductListDisplayLogic: class {
-    func displayTitleWithCategory(name categoryName: String)
-    func displayLoadingState()
-    func displayEmptyState()
-    func displayDynamicData()
-    func displayRequestError(message: String)
-}
-
 class ProductListViewController: UIViewController {
 
     var interactor: ProductListBusinessLogic?
@@ -68,61 +60,6 @@ class ProductListViewController: UIViewController {
         interactor?.setupTitleWithCategoryName()
         interactor?.setupLoadingState()
         interactor?.requestProductsByCategory()
-    }
-    
-}
-
-extension ProductListViewController: ProductListDisplayLogic {
-    
-    func displayTitleWithCategory(name categoryName: String) {
-        title = categoryName
-    }
-    
-    func displayLoadingState() {
-        let loadingStateLabel = UILabel()
-        loadingStateLabel.text = "Carregando..."
-        loadingStateLabel.textColor = .darkGray
-        loadingStateLabel.textAlignment = .center
-        loadingStateLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
-        loadingStateLabel.numberOfLines = 0
-        productsTableView.backgroundView = loadingStateLabel
-    }
-    
-    func displayEmptyState() {
-        let loadingStateLabel = UILabel()
-        loadingStateLabel.text = "Nenhum produto foi encontrado para essa categoria.\nPor favor, tente novamente."
-        loadingStateLabel.textColor = .darkGray
-        loadingStateLabel.textAlignment = .center
-        loadingStateLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
-        loadingStateLabel.numberOfLines = 0
-        productsTableView.backgroundView = loadingStateLabel
-    }
-    
-    func displayDynamicData() {
-        DispatchQueue.main.async {
-            self.productsTableView.reloadData()
-        }
-    }
-    
-    func displayRequestError(message: String) {
-        let alert = UIAlertController(title: Constants.productListErrorTitle, message: Constants.productListErrorMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Constants.productListErrorCloseActionMessage, style: .default, handler: { _ in
-            self.navigationController?.popToRootViewController(animated: true)
-        }))
-        present(alert, animated: true)
-    }
-    
-}
-
-extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return interactor?.numberOfRows ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewModel = interactor?.cellForRow(at: indexPath.row) else { fatalError("Nullable Interactor.") }
-        return ProductTableViewCellSetup.setup(tableView: tableView, indexPath: indexPath, viewModel: viewModel)
     }
     
 }

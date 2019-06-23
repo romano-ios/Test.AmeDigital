@@ -20,11 +20,13 @@ protocol ProductListBusinessLogic {
     func setupLoadingState()
     func requestProductsByCategory()
     func cellForRow(at index: Int) -> ProductViewModel
+    func didSelect(at index: Int)
     
 }
 
 protocol ProductListDataStore {
     var category: CategoryModel? { get set }
+    var product: ProductModel? { get }
 }
 
 class ProductListInteractor: ProductListBusinessLogic, ProductListDataStore {
@@ -33,7 +35,8 @@ class ProductListInteractor: ProductListBusinessLogic, ProductListDataStore {
     var worker: ProductListWorker?
     var category: CategoryModel?
     var products: [ProductModel]?
-
+    var product: ProductModel?
+    
     init(worker: ProductListWorker = ProductListWorker()) {
         self.worker = worker
     }
@@ -62,8 +65,14 @@ class ProductListInteractor: ProductListBusinessLogic, ProductListDataStore {
     
     func handleRequestSuccess(_ response: ProductList.Response) {
         products = response.data
+        
+        if numberOfRows == 0 {
+            presenter?.presentEmptyState()
+        } else {
+            presenter?.presentFilledState()
+        }
+        
         presenter?.presentDynamicData()
-        if numberOfRows == 0 { presenter?.presentEmptyState() }
     }
     
     func handleRequestError(_ error: Error) {
@@ -73,6 +82,11 @@ class ProductListInteractor: ProductListBusinessLogic, ProductListDataStore {
     func cellForRow(at index: Int) -> ProductViewModel {
         guard let product = products?[index] else { fatalError("Invalid index for products array.") }
         return ProductViewModel(product: product)
+    }
+    
+    func didSelect(at index: Int) {
+        product = products?[index]
+        presenter?.presentProductDetails()
     }
 
 }

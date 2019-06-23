@@ -16,8 +16,10 @@ protocol ProductListPresentationLogic {
     func presentTitleWithCategory(name categoryName: String)
     func presentLoadingState()
     func presentEmptyState()
+    func presentFilledState()
     func presentDynamicData()
     func presentRequestError(_ error: Error)
+    func presentProductDetails()
 }
 
 class ProductListPresenter: ProductListPresentationLogic {
@@ -36,12 +38,20 @@ class ProductListPresenter: ProductListPresentationLogic {
         viewController?.displayEmptyState()
     }
     
+    func presentFilledState() {
+        viewController?.displayFilledState()
+    }
+    
     func presentDynamicData() {
         viewController?.displayDynamicData()
     }
     
     func presentRequestError(_ error: Error) {
         viewController?.displayRequestError(message: error.localizedDescription)
+    }
+    
+    func presentProductDetails() {
+        viewController?.displayProductDetails()
     }
     
 }

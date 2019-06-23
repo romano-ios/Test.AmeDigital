@@ -82,11 +82,12 @@ extension ProductDetailsViewController: ProductDetailsDisplayLogic {
     
     func displayReserveProductButton() {
         guard let window = UIApplication.shared.keyWindow else { return }
-        let componentHeight: CGFloat = 74
+        var componentHeight: CGFloat = 74
         var yPosition = window.frame.size.height - componentHeight
         
         if #available(iOS 11.0, *) {
             yPosition -= window.safeAreaInsets.bottom
+            componentHeight += window.safeAreaInsets.bottom
         }
         
         let reserveProductView = ReserveProductView(frame: CGRect(x: 0, y: yPosition, width: window.frame.size.width, height: componentHeight))
@@ -115,7 +116,7 @@ extension ProductDetailsViewController: ProductDetailsDisplayLogic {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: Constants.reserveCloseActionMessage, style: .default, handler: { _ in
-            self.navigationController?.popToRootViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }))
         
         present(alert, animated: true)

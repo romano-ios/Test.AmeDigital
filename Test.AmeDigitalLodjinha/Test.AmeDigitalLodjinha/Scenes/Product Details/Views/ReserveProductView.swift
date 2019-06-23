@@ -62,7 +62,7 @@ class ReserveProductView: UIView {
             reserveProductButton.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 12),
             reserveProductButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
             reserveProductButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
-            reserveProductButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12)
+            reserveProductButton.heightAnchor.constraint(equalToConstant: 50.0)
         ])
     }
     
