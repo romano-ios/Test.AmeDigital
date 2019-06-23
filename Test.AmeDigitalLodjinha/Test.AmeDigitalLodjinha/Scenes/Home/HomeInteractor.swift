@@ -13,16 +13,16 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    func setNavigationLogoView()
-    func setBannersContentLoading()
-    func getBannersContent()
+    func setupNavigationLogoView()
+    func setupBannersContentLoading()
+    func requestBannersContent()
     
-    func getCategories()
+    func requestCategories()
     func cellForCategories() -> [CategoryViewModel]
     func didSelectCategory(at index: Int)
     
     var numberOfBestSellerRows: Int { get }
-    func getBestSellers()
+    func requestBestSellers()
     func cellForBestSellerRow(at index: Int) -> ProductViewModel
     func didSelectBestSeller(at index: Int)
 }
@@ -46,81 +46,8 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         self.worker = worker
     }
     
-    // MARK: - Navigation Logo
-    
-    func setNavigationLogoView() {
+    func setupNavigationLogoView() {
         presenter?.presentNavigationLogo()
-    }
-    
-    // MARK: - Banners
-    
-    func setBannersContentLoading() {
-        presenter?.presentBannersLoading()
-    }
-    
-    func getBannersContent() {
-        worker?.getBanners().done(handleGetBannersSuccess).catch(handleGetBannersError)
-    }
-    
-    func handleGetBannersSuccess(_ response: Home.Banner.Response) {
-        presenter?.presentBanners(response: response)
-    }
-    
-    func handleGetBannersError(_ error: Error) {
-        presenter?.presentBannersError()
-    }
-    
-    // MARK: - Categories
-    
-    func getCategories() {
-        worker?.getCategories().done(handleGetCategoriesSuccess).catch(handleGetCategoriesError)
-    }
-    
-    func handleGetCategoriesSuccess(_ response: Home.Category.Response) {
-        self.categories = response.data
-        presenter?.presentNewData()
-    }
-    
-    func handleGetCategoriesError(_ error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    func cellForCategories() -> [CategoryViewModel] {
-        return self.categories.map { CategoryViewModel(category: $0) }
-    }
-    
-    func didSelectCategory(at index: Int) {
-        category = categories[index]
-        presenter?.presentProductsListByCategory()
-    }
-    
-    // MARK: - Best Sellers
-    
-    var numberOfBestSellerRows: Int {
-        return self.bestSellers.count
-    }
-    
-    func getBestSellers() {
-        worker?.getBestSellers().done(handleGetBestSellersSuccess).catch(handleGetBestSellersError)
-    }
-    
-    func handleGetBestSellersSuccess(_ response: Home.BestSeller.Response) {
-        self.bestSellers = response.data
-        presenter?.presentNewData()
-    }
-    
-    func handleGetBestSellersError(_ error: Error) {
-        //
-    }
-    
-    func cellForBestSellerRow(at index: Int) -> ProductViewModel {
-        let bestSeller = self.bestSellers[index]
-        return ProductViewModel(product: bestSeller)
-    }
-    
-    func didSelectBestSeller(at index: Int) {
-        product = bestSellers[index]
-        presenter?.presentBestSellerDetails()
     }
 
 }

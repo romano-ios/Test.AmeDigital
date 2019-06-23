@@ -84,6 +84,9 @@
 		FDE737F422BF2A9D00549CAB /* Networking.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDE737F322BF2A9D00549CAB /* Networking.strings */; };
 		FDE737F622BF2CF900549CAB /* Double+Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737F522BF2CF900549CAB /* Double+Money.swift */; };
 		FDE737F822BF2FE200549CAB /* HomeViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737F722BF2FE200549CAB /* HomeViewController+DisplayLogic.swift */; };
+		FDE737FA22C01AE200549CAB /* HomeInteractor+Banners.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737F922C01AE200549CAB /* HomeInteractor+Banners.swift */; };
+		FDE737FC22C01B1000549CAB /* HomeInteractor+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737FB22C01B1000549CAB /* HomeInteractor+Categories.swift */; };
+		FDE737FE22C01B3600549CAB /* HomeInteractor+BestSellers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737FD22C01B3600549CAB /* HomeInteractor+BestSellers.swift */; };
 		FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12022B5620F00B4B61F /* BaseResponse.swift */; };
 		FDE7B12322B563C600B4B61F /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12222B563C600B4B61F /* Banner.swift */; };
 		FDE7B12622B56E4200B4B61F /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */; };
@@ -197,6 +200,9 @@
 		FDE737F322BF2A9D00549CAB /* Networking.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Networking.strings; sourceTree = "<group>"; };
 		FDE737F522BF2CF900549CAB /* Double+Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Money.swift"; sourceTree = "<group>"; };
 		FDE737F722BF2FE200549CAB /* HomeViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		FDE737F922C01AE200549CAB /* HomeInteractor+Banners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeInteractor+Banners.swift"; sourceTree = "<group>"; };
+		FDE737FB22C01B1000549CAB /* HomeInteractor+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeInteractor+Categories.swift"; sourceTree = "<group>"; };
+		FDE737FD22C01B3600549CAB /* HomeInteractor+BestSellers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeInteractor+BestSellers.swift"; sourceTree = "<group>"; };
 		FDE7B12022B5620F00B4B61F /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FDE7B12222B563C600B4B61F /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
@@ -395,6 +401,9 @@
 				FD2B721F22B3ED3800AAB71D /* HomeRouter.swift */,
 				FD2B722022B3ED3800AAB71D /* HomeModels.swift */,
 				FD2B722222B3ED3800AAB71D /* HomeInteractor.swift */,
+				FDE737F922C01AE200549CAB /* HomeInteractor+Banners.swift */,
+				FDE737FB22C01B1000549CAB /* HomeInteractor+Categories.swift */,
+				FDE737FD22C01B3600549CAB /* HomeInteractor+BestSellers.swift */,
 				FD2B722122B3ED3800AAB71D /* HomeViewController.swift */,
 				FDF4620322B746B000A2FA2F /* HomeViewController+UITableView.swift */,
 				FDE737F722BF2FE200549CAB /* HomeViewController+DisplayLogic.swift */,
@@ -903,10 +912,12 @@
 				FD79A1A222BC3A26003ED309 /* ProductDetailsViewController.swift in Sources */,
 				FD3AEC1A22B9C598000E2A6B /* ProductTableViewCellSetup.swift in Sources */,
 				FDE737D322BF0C2A00549CAB /* ProductListViewController+UITableView.swift in Sources */,
+				FDE737FE22C01B3600549CAB /* HomeInteractor+BestSellers.swift in Sources */,
 				FD3CE09C22B47807003F480D /* Constants.swift in Sources */,
 				FDE737EC22BF221300549CAB /* BannerLoadingView.swift in Sources */,
 				FDE7B12322B563C600B4B61F /* Banner.swift in Sources */,
 				FD03573022BAF4DE002EE5B5 /* CategoryTableViewCell.swift in Sources */,
+				FDE737FC22C01B1000549CAB /* HomeInteractor+Categories.swift in Sources */,
 				FD79A1A722BC5B74003ED309 /* String+AttributedString.swift in Sources */,
 				FD2B722422B3ED3800AAB71D /* HomeWorker.swift in Sources */,
 				FD2B722322B3ED3800AAB71D /* HomePresenter.swift in Sources */,
@@ -920,6 +931,7 @@
 				FD79A19E22BC3A26003ED309 /* ProductDetailsPresenter.swift in Sources */,
 				FD3CE0A122B493A7003F480D /* Endpoint.swift in Sources */,
 				FD79A1A122BC3A26003ED309 /* ProductDetailsModels.swift in Sources */,
+				FDE737FA22C01AE200549CAB /* HomeInteractor+Banners.swift in Sources */,
 				FDE737DB22BF178000549CAB /* R.generated.swift in Sources */,
 				FDE737CC22BED0CA00549CAB /* ProductListViewController.swift in Sources */,
 				FDE737CA22BED0CA00549CAB /* ProductListRouter.swift in Sources */,

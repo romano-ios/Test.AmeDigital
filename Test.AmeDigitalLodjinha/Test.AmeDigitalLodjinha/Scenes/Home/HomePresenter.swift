@@ -15,7 +15,8 @@ protocol HomePresentationLogic {
     func presentBannersLoading()
     func presentBanners(response: Home.Banner.Response)
     func presentBannersError()
-    func presentNewData()
+    func presentDynamicData()
+    func presentGenericError(errorMessage: String)
     func presentBestSellerDetails()
     func presentProductsListByCategory()
 }
@@ -41,8 +42,12 @@ class HomePresenter: HomePresentationLogic {
         viewController?.displayBannersError()
     }
     
-    func presentNewData() {
-        viewController?.displayNewData()
+    func presentDynamicData() {
+        viewController?.displayDynamicData()
+    }
+    
+    func presentGenericError(errorMessage: String) {
+        viewController?.displayGenericError(errorMessage: errorMessage)
     }
     
     func presentBestSellerDetails() {

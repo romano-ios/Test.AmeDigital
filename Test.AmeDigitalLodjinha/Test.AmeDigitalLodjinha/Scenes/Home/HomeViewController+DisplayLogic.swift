@@ -14,7 +14,8 @@ protocol HomeDisplayLogic: class {
     func displayBannersLoading()
     func displayBanners(viewModel: Home.Banner.ViewModel)
     func displayBannersError()
-    func displayNewData()
+    func displayDynamicData()
+    func displayGenericError(errorMessage: String)
     func displayBestSellerDetails()
     func displayProductsListByCategory()
 }
@@ -26,10 +27,16 @@ extension HomeViewController: HomeDisplayLogic {
         self.navigationItem.titleView = UIImageView(image: R.image.logoNavbar())
     }
     
-    func displayNewData() {
+    func displayDynamicData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    func displayGenericError(errorMessage: String) {
+        let alert = UIAlertController(title: R.string.home.error_title(), message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: R.string.home.error_close(), style: .default))
+        present(alert, animated: true)
     }
     
     func displayBestSellerDetails() {

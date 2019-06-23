@@ -8,7 +8,11 @@
 
 navigation_title = "Home";
 
+error_title = "Erro!";
+error_close = "Fechar";
 error_loading_banners = "Erro ao carregar banners.";
+error_loading_categories = "Erro ao carregar categorias.";
+error_loading_best_sellers = "Erro ao carregar produtos mais vendidos.";
 
 section_title_categories = "Categorias";
 section_title_best_sellers = "Mais Vendidos";

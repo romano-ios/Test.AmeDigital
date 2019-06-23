@@ -57,11 +57,11 @@ class HomeViewController: UITableViewController {
     }
     
     private func setupView() {
-        interactor?.setNavigationLogoView()
-        interactor?.setBannersContentLoading()
-        interactor?.getBannersContent()
-        interactor?.getCategories()
-        interactor?.getBestSellers()
+        interactor?.setupNavigationLogoView()
+        interactor?.setupBannersContentLoading()
+        interactor?.requestBannersContent()
+        interactor?.requestCategories()
+        interactor?.requestBestSellers()
     }
 
 }
