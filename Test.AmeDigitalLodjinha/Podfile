@@ -8,6 +8,7 @@ target 'Test.AmeDigitalLodjinha' do
   # Pods for Test.AmeDigitalLodjinha
   pod "PromiseKit", "~> 6.8"
   pod "SDWebImage", "~> 5.0"
+  pod "R.swift"
 
   target 'Test.AmeDigitalLodjinhaTests' do
     inherit! :search_paths

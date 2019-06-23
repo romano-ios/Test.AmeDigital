@@ -73,6 +73,7 @@
 		FDE737D322BF0C2A00549CAB /* ProductListViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737D222BF0C2A00549CAB /* ProductListViewController+UITableView.swift */; };
 		FDE737D522BF0C6100549CAB /* ProductListViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737D422BF0C6100549CAB /* ProductListViewController+DisplayLogic.swift */; };
 		FDE737D822BF139E00549CAB /* ProductBackgroundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737D722BF139E00549CAB /* ProductBackgroundLabel.swift */; };
+		FDE737DB22BF178000549CAB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE737DA22BF178000549CAB /* R.generated.swift */; };
 		FDE7B12122B5620F00B4B61F /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12022B5620F00B4B61F /* BaseResponse.swift */; };
 		FDE7B12322B563C600B4B61F /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12222B563C600B4B61F /* Banner.swift */; };
 		FDE7B12622B56E4200B4B61F /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */; };
@@ -175,6 +176,7 @@
 		FDE737D222BF0C2A00549CAB /* ProductListViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductListViewController+UITableView.swift"; sourceTree = "<group>"; };
 		FDE737D422BF0C6100549CAB /* ProductListViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductListViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		FDE737D722BF139E00549CAB /* ProductBackgroundLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBackgroundLabel.swift; sourceTree = "<group>"; };
+		FDE737DA22BF178000549CAB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		FDE7B12022B5620F00B4B61F /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FDE7B12222B563C600B4B61F /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		FDE7B12522B56E4200B4B61F /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		FD2B722B22B3EF4F00AAB71D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				FDE737DA22BF178000549CAB /* R.generated.swift */,
 				FD2B722C22B3EF5F00AAB71D /* Pacifico-Regular.ttf */,
 			);
 			path = Fonts;
@@ -553,6 +556,7 @@
 			buildConfigurationList = FD2B720F22B3EBDB00AAB71D /* Build configuration list for PBXNativeTarget "Test.AmeDigitalLodjinha" */;
 			buildPhases = (
 				957804C88BEF3BF06829AE07 /* [CP] Check Pods Manifest.lock */,
+				FDE737D922BF16D700549CAB /* R.swift */,
 				FD2B71E322B3EBD900AAB71D /* Sources */,
 				FD2B71E422B3EBD900AAB71D /* Frameworks */,
 				FD2B71E522B3EBD900AAB71D /* Resources */,
@@ -761,6 +765,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Test.AmeDigitalLodjinha/Pods-Test.AmeDigitalLodjinha-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -768,12 +773,33 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test.AmeDigitalLodjinha/Pods-Test.AmeDigitalLodjinha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FDE737D922BF16D700549CAB /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -829,6 +855,7 @@
 				FD79A19E22BC3A26003ED309 /* ProductDetailsPresenter.swift in Sources */,
 				FD3CE0A122B493A7003F480D /* Endpoint.swift in Sources */,
 				FD79A1A122BC3A26003ED309 /* ProductDetailsModels.swift in Sources */,
+				FDE737DB22BF178000549CAB /* R.generated.swift in Sources */,
 				FDE737CC22BED0CA00549CAB /* ProductListViewController.swift in Sources */,
 				FDE737CA22BED0CA00549CAB /* ProductListRouter.swift in Sources */,
 				FD3AEC1E22B9CBB7000E2A6B /* HomeViewController+Banners.swift in Sources */,
