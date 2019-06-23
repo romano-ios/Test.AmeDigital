@@ -27,14 +27,14 @@ extension ProductListViewController: ProductListDisplayLogic {
     
     func displayLoadingState() {
         let loadingStateLabel = ProductBackgroundLabel()
-        loadingStateLabel.text = "Carregando..."
+        loadingStateLabel.text = R.string.productList.loading_message()
         productsTableView.backgroundView = loadingStateLabel
     }
     
     func displayEmptyState() {
-        let loadingStateLabel = ProductBackgroundLabel()
-        loadingStateLabel.text = "Nenhum produto foi cadastrado para essa categoria.\nPor favor, tente novamente buscando por outras categorias."
-        productsTableView.backgroundView = loadingStateLabel
+        let emptyStateLabel = ProductBackgroundLabel()
+        emptyStateLabel.text = R.string.productList.empty_message()
+        productsTableView.backgroundView = emptyStateLabel
     }
     
     func displayFilledState() {
@@ -48,10 +48,15 @@ extension ProductListViewController: ProductListDisplayLogic {
     }
     
     func displayRequestError(message: String) {
-        let alert = UIAlertController(title: Constants.productListErrorTitle, message: Constants.productListErrorMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Constants.productListErrorCloseActionMessage, style: .default, handler: { _ in
+        let alert = UIAlertController(
+            title: R.string.productList.error_title(),
+            message: R.string.productList.error_message(),
+            preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: R.string.productList.error_close_message(), style: .default, handler: { _ in
             self.navigationController?.popToRootViewController(animated: true)
         }))
+        
         present(alert, animated: true)
     }
     

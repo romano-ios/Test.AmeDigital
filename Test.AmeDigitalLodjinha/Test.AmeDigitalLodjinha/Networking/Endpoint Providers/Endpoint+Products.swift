@@ -12,7 +12,7 @@ extension Endpoint {
     
     static func getProducts(offset: Int, limit: Int, categoryId: Int) -> Endpoint {
         return Endpoint(
-            path: Constants.apiProductUrl,
+            path: R.string.networking.url_product(),
             method: .get,
             queryItems: [
                 URLQueryItem(name: "offset", value: String(offset)),
@@ -24,7 +24,7 @@ extension Endpoint {
     
     static func getBestSellerProducts() -> Endpoint {
         return Endpoint(
-            path: Constants.apiBestSellersProductsUrl,
+            path: R.string.networking.url_best_seller(),
             method: .get,
             queryItems: []
         )
@@ -32,7 +32,7 @@ extension Endpoint {
     
     static func getProductDetailsBy(id productId: Int) -> Endpoint {
         return Endpoint(
-            path: LodjinhaUtils.getProductDetailsUrlBy(id: productId),
+            path: R.string.networking.url_product_id(productId),
             method: .get,
             queryItems: []
         )
@@ -40,7 +40,7 @@ extension Endpoint {
     
     static func reserveProductBy(id productId: Int) -> Endpoint {
         return Endpoint(
-            path: LodjinhaUtils.getProductDetailsUrlBy(id: productId),
+            path: R.string.networking.url_product_id(productId),
             method: .post,
             queryItems: []
         )

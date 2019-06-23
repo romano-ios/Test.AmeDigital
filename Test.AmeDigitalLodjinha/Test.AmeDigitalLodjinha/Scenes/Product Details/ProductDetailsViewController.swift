@@ -12,15 +12,6 @@
 
 import UIKit
 
-protocol ProductDetailsDisplayLogic: class {
-    func displayProductDetails(viewModel: ProductDetails.ViewModel)
-    func displayReserveProductButton()
-    func enableReserveProductButton()
-    func disableReserveProductButton()
-    func displaySuccessReserveMessage()
-    func displayErrorReserveMessage(errorMessage: String)
-}
-
 class ProductDetailsViewController: UIViewController {
 
     var interactor: ProductDetailsBusinessLogic?
@@ -60,7 +51,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productCurrentPriceLabel: UILabel!
     @IBOutlet weak var productDescriptionLabel: UILabel!
     
-    private var reserveProductButton: ReserveProductButton?
+    var reserveProductButton: ReserveProductButton?
     
     func requestProductDetails() {
         interactor?.requestProductDetails()
@@ -68,69 +59,4 @@ class ProductDetailsViewController: UIViewController {
     
 }
 
-extension ProductDetailsViewController: ProductDetailsDisplayLogic {
-    
-    func displayProductDetails(viewModel: ProductDetails.ViewModel) {
-        title = viewModel.category
-        productImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: UIImage(named: "noProductPlaceholder"))
-        productNameLabel.text = viewModel.name
-        productOldPriceLabel.attributedText = "De: \(LodjinhaUtils.convertMoneyToString(viewModel.oldPrice))".toStrikethroughStyle
-        productCurrentPriceLabel.text = "Por: \(LodjinhaUtils.convertMoneyToString(viewModel.currentPrice))"
-        productDescriptionLabel.attributedText = viewModel.description.htmlToAttributedString
-        productDescriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-    }
-    
-    func displayReserveProductButton() {
-        guard let window = UIApplication.shared.keyWindow else { return }
-        var componentHeight: CGFloat = 74
-        var yPosition = window.frame.size.height - componentHeight
-        
-        if #available(iOS 11.0, *) {
-            yPosition -= window.safeAreaInsets.bottom
-            componentHeight += window.safeAreaInsets.bottom
-        }
-        
-        let reserveProductView = ReserveProductView(frame: CGRect(x: 0, y: yPosition, width: window.frame.size.width, height: componentHeight))
-        reserveProductView.reserveProductButton.addTarget(self, action: #selector(requestReserveProduct), for: .touchUpInside)
-        
-        self.reserveProductButton = reserveProductView.reserveProductButton
-        self.view.addSubview(reserveProductView)
-    }
-    
-    @objc func requestReserveProduct(sender: UIButton!) {
-        interactor?.requestProductReserve()
-    }
-    
-    func enableReserveProductButton() {
-        self.reserveProductButton?.isEnabled = true
-    }
-    
-    func disableReserveProductButton() {
-        self.reserveProductButton?.isEnabled = false
-    }
-    
-    func displaySuccessReserveMessage() {
-        let alert = UIAlertController(
-            title: Constants.reserveSuccessTitle,
-            message: Constants.reserveSuccessMessage,
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: Constants.reserveCloseActionMessage, style: .default, handler: { _ in
-            self.navigationController?.popViewController(animated: true)
-        }))
-        
-        present(alert, animated: true)
-    }
-    
-    func displayErrorReserveMessage(errorMessage: String) {
-        let alert = UIAlertController(
-            title: Constants.reserveErrorTitle,
-            message: "\(Constants.reserveErrorMessage)\n\n\(errorMessage)",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: Constants.reserveCloseActionMessage, style: .default))
-        
-        present(alert, animated: true)
-    }
-    
-}
+

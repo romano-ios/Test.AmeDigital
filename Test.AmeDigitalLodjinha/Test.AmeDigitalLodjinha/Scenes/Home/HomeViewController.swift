@@ -12,16 +12,6 @@
 
 import UIKit
 
-protocol HomeDisplayLogic: class {
-    func displayNavigationLogo()
-    func displayBannersLoading()
-    func displayBanners(viewModel: Home.Banner.ViewModel)
-    func displayBannersError(_ error: Error)
-    func displayNewData()
-    func displayBestSellerDetails()
-    func displayProductsListByCategory()
-}
-
 class HomeViewController: UITableViewController {
     
     var interactor: HomeBusinessLogic?
@@ -67,65 +57,11 @@ class HomeViewController: UITableViewController {
     }
     
     private func setupView() {
-        setupNavigationLogo()
-        setupBanners()
-        setupCategories()
-        setupBestSellers()
-    }
-    
-    private func setupTableView() {
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.register(
-            UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil),
-            forCellReuseIdentifier: CellsIdentifiers.productCell.rawValue
-        )
-        tableView.register(
-            UINib(nibName: String(describing: CategoryTableViewCell.self), bundle: nil),
-            forCellReuseIdentifier: CellsIdentifiers.categoryCell.rawValue
-        )
-    }
-
-    private func setupNavigationLogo() {
         interactor?.setNavigationLogoView()
-    }
-    
-    private func setupBanners() {
         interactor?.setBannersContentLoading()
         interactor?.getBannersContent()
-    }
-    
-    private func setupCategories() {
         interactor?.getCategories()
-    }
-    
-    private func setupBestSellers() {
         interactor?.getBestSellers()
     }
 
-}
-
-extension HomeViewController: HomeDisplayLogic {
-    
-    func displayNavigationLogo() {
-        self.navigationItem.title = "Home"
-        if let logo = UIImage(named: "logoNavbar") {
-            self.navigationItem.titleView = UIImageView(image: logo)
-        }
-    }
-    
-    func displayNewData() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-    
-    func displayBestSellerDetails() {
-        router?.routeToBestSellerDetails()
-    }
-    
-    func displayProductsListByCategory() {
-        router?.routeToProductsListByCategory()
-    }
-    
 }

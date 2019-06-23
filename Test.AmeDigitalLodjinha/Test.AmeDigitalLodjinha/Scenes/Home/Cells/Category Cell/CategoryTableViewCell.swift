@@ -25,8 +25,8 @@ class CategoryTableViewCell: UITableViewCell {
         collectionView.delegate = self
         
         collectionView.register(
-            UINib(nibName: String(describing: CategoryCollectionViewCell.self), bundle: nil),
-            forCellWithReuseIdentifier: CellsIdentifiers.categoryCollectionCell.rawValue
+            UINib(nibName: R.nib.categoryCollectionViewCell.name, bundle: nil),
+            forCellWithReuseIdentifier: R.string.cells.category_collection_cell()
         )
     }
     
@@ -44,12 +44,12 @@ extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: CellsIdentifiers.categoryCollectionCell.rawValue,
+            withReuseIdentifier: R.string.cells.category_collection_cell(),
             for: indexPath) as! CategoryCollectionViewCell
         let viewModel = categories[indexPath.row]
         
         cell.categoryLabelName?.text = viewModel.description
-        cell.categoryImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: UIImage(named: "noProductPlaceholder"))
+        cell.categoryImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: R.image.noProductPlaceholder())
         
         return cell
     }

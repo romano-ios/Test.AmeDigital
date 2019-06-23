@@ -14,11 +14,9 @@ struct CategoryTableViewCellSetup: ConfigurableCell {
     typealias T = [CategoryViewModel]
     
     static func setup(tableView: UITableView, indexPath: IndexPath, viewModel: [CategoryViewModel]) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellsIdentifiers.categoryCell.rawValue, for: indexPath) as! CategoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.string.cells.category_cell(), for: indexPath) as! CategoryTableViewCell
         cell.categories = viewModel
-        
         DispatchQueue.main.async { cell.collectionView.reloadData() }
-        
         return cell
     }
     

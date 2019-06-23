@@ -10,8 +10,6 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
-
 protocol ProductDetailsPresentationLogic {
     func presentProductDetails(product: ProductModel)
     func presentLoadingStateForReserveRequest()

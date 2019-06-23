@@ -1,0 +1,20 @@
+/* 
+  Networking.strings
+  Test.AmeDigitalLodjinha
+
+  Created by Leandro Romano on 23/06/19.
+  Copyright © 2019 Leandro Romano. All rights reserved.
+*/
+
+schema = "https";
+
+url_host = "alodjinha.herokuapp.com";
+url_banner = "/banner";
+url_category = "/categoria";
+url_product = "/produto";
+url_product_id = "/produto/%d";
+url_best_seller = "/produto/maisvendidos";
+
+header_key_content_type = "Content-Type";
+header_key_accept = "Accept";
+header_value_application_json = "application/json";

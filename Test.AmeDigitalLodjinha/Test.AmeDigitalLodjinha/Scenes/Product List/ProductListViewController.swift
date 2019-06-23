@@ -51,8 +51,8 @@ class ProductListViewController: UIViewController {
     private func setupTableview() {
         productsTableView.tableFooterView = UIView()
         productsTableView.register(
-            UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil),
-            forCellReuseIdentifier: CellsIdentifiers.productCell.rawValue
+            UINib(nibName: R.nib.productTableViewCell.name, bundle: nil),
+            forCellReuseIdentifier: R.string.cells.product_cell()
         )
     }
     

@@ -11,6 +11,19 @@ import UIKit
 
 extension HomeViewController {
     
+    func setupTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(
+            UINib(nibName: R.nib.productTableViewCell.name, bundle: nil),
+            forCellReuseIdentifier: R.string.cells.product_cell()
+        )
+        tableView.register(
+            UINib(nibName: R.nib.categoryTableViewCell.name, bundle: nil),
+            forCellReuseIdentifier: R.string.cells.category_cell()
+        )
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if isCategoriesSection(indexPath.section) { return 120 }
         return UITableView.automaticDimension
@@ -26,8 +39,8 @@ extension HomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if isCategoriesSection(section) { return CellsUtils.generateSectionHeader(title: Constants.titleCategories) }
-        if isBestSellersSection(section) { return CellsUtils.generateSectionHeader(title: Constants.titleBestSellers) }
+        if isCategoriesSection(section) { return CellsUtils.createSectionHeader(title: R.string.home.section_title_categories()) }
+        if isBestSellersSection(section) { return CellsUtils.createSectionHeader(title: R.string.home.section_title_best_sellers()) }
         return UIView(frame: CGRect.zero)
     }
     
@@ -54,7 +67,7 @@ extension HomeViewController {
             }
         }
         
-        return tableView.dequeueReusableCell(withIdentifier: CellsIdentifiers.cell.rawValue, for: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: R.string.cells.cell(), for: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,20 +76,16 @@ extension HomeViewController {
     }
     
     func setupTableViewHeader(contentView: UIView) {
-        let containerView = UIView()
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.layer.shadowOffset = CGSize(width: 1, height: 3)
-        containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOpacity = 0.6
-        containerView.addSubview(contentView)
+        let bannerHeaderView = BannerHeaderView()
+        bannerHeaderView.addSubview(contentView)
         
-        self.tableView.tableHeaderView = containerView
+        self.tableView.tableHeaderView = bannerHeaderView
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor),
-            containerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor),
-            containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 200)
+            bannerHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor),
+            bannerHeaderView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor),
+            bannerHeaderView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
+            bannerHeaderView.heightAnchor.constraint(equalToConstant: 200)
         ])
         
         self.tableView.tableHeaderView?.layoutIfNeeded()

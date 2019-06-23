@@ -23,8 +23,8 @@ extension Endpoint {
     
     var url: URL? {
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = Constants.apiHostUrl
+        components.scheme = R.string.networking.schema()
+        components.host = R.string.networking.url_host()
         components.path = path
         components.queryItems = queryItems
         

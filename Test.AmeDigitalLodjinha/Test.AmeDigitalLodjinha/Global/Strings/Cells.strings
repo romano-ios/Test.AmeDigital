@@ -1,0 +1,12 @@
+/* 
+  Cells.strings
+  Test.AmeDigitalLodjinha
+
+  Created by Leandro Romano on 22/06/19.
+  Copyright © 2019 Leandro Romano. All rights reserved.
+*/
+
+cell = "cell";
+category_cell = "categoryCell";
+category_collection_cell = "categoryCollectionViewId";
+product_cell = "productCell";

@@ -27,10 +27,6 @@ extension String {
         }
     }
     
-    var htmlToString: String {
-        return htmlToAttributedString?.string ?? ""
-    }
-    
     var toStrikethroughStyle: NSAttributedString {
         let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: self)
         attributeString.addAttribute(

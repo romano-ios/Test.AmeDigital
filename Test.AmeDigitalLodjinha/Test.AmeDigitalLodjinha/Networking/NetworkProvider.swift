@@ -50,9 +50,12 @@ class NetworkProvider {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = httpMethod
         urlRequest.httpBody = data
-        urlRequest.addValue(Constants.httpHeaderValueApplicationJson, forHTTPHeaderField: Constants.httpHeaderKeyContentType)
-        urlRequest.addValue(Constants.httpHeaderValueApplicationJson, forHTTPHeaderField: Constants.httpHeaderKeyAccept)
-        
+        urlRequest.addValue(
+            R.string.networking.header_value_application_json(),
+            forHTTPHeaderField: R.string.networking.header_key_content_type())
+        urlRequest.addValue(
+            R.string.networking.header_value_application_json(),
+            forHTTPHeaderField: R.string.networking.header_key_accept())
         return urlRequest
     }
     

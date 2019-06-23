@@ -67,7 +67,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     }
     
     func handleGetBannersError(_ error: Error) {
-        presenter?.presentBannersError(error)
+        presenter?.presentBannersError()
     }
     
     // MARK: - Categories

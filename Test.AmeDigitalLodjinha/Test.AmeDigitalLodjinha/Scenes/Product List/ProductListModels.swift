@@ -10,8 +10,6 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
-
 enum ProductList {
   
     class Response: BaseResponse<[ProductModel]> {

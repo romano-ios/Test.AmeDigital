@@ -1,0 +1,18 @@
+/* 
+  ProductDetails.strings
+  Test.AmeDigitalLodjinha
+
+  Created by Leandro Romano on 22/06/19.
+  Copyright © 2019 Leandro Romano. All rights reserved.
+*/
+
+success_title = "Sucesso!";
+success_message = "O seu produto foi reservado com sucesso.";
+
+error_title = "Erro!";
+error_message = "Não foi possível reservar o produto. Tente novamente.\n\n%@";
+
+close_message = "Fechar";
+
+old_price = "De: %@";
+current_price = "Por: %@";

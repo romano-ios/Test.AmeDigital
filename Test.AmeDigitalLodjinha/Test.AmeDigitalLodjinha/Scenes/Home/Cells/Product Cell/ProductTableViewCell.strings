@@ -1,0 +1,10 @@
+/* 
+  ProductTableViewCell.strings
+  Test.AmeDigitalLodjinha
+
+  Created by Leandro Romano on 23/06/19.
+  Copyright © 2019 Leandro Romano. All rights reserved.
+*/
+
+old_price = "De: %@";
+current_price = "Por: %@";

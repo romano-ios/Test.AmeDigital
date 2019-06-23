@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class BannersSliderView: UIView {
+class BannerSliderView: UIView {
 
     let kDeviceScreenWidthSize = UIScreen.main.bounds.width
     let kSliderHeight: CGFloat = CGFloat(200)
@@ -91,7 +91,7 @@ class BannersSliderView: UIView {
     
 }
 
-extension BannersSliderView: UIScrollViewDelegate {
+extension BannerSliderView: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width)

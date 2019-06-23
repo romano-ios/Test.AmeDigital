@@ -1,0 +1,15 @@
+/* 
+  ProductList.strings
+  Test.AmeDigitalLodjinha
+
+  Created by Leandro Romano on 22/06/19.
+  Copyright © 2019 Leandro Romano. All rights reserved.
+*/
+
+loading_message = "Carregando...";
+
+empty_message = "Nenhum produto foi cadastrado para essa categoria.\nPor favor, tente novamente buscando por outras categorias.";
+
+error_title = "Erro!";
+error_message = "Ocorreu um erro durante a busca por produtos na categoria selecionada. Por favor, tente novamente.";
+error_close_message = "Fechar";

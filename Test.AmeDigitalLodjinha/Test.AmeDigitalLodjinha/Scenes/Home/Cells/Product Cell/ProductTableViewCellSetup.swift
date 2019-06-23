@@ -14,12 +14,12 @@ struct ProductTableViewCellSetup: ConfigurableCell {
     typealias T = ProductViewModel
     
     static func setup(tableView: UITableView, indexPath: IndexPath, viewModel: ProductViewModel) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellsIdentifiers.productCell.rawValue, for: indexPath) as! ProductTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.string.cells.product_cell(), for: indexPath) as! ProductTableViewCell
         cell.accessoryType = .disclosureIndicator
         cell.productNameLabel.text = viewModel.name
-        cell.productImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: UIImage(named: "noProductPlaceholder"))
-        cell.productOldPriceLabel.attributedText = "De: \(LodjinhaUtils.convertMoneyToString(viewModel.oldPrice))".toStrikethroughStyle
-        cell.productCurrentPriceLabel.text = "Por: \(LodjinhaUtils.convertMoneyToString(viewModel.currentPrice))"
+        cell.productImageView.sd_setImage(with: URL(string: viewModel.imageUrl), placeholderImage: R.image.noProductPlaceholder())
+        cell.productOldPriceLabel.attributedText = R.string.productTableViewCell.old_price(viewModel.oldPrice.toMoney).toStrikethroughStyle
+        cell.productCurrentPriceLabel.text = R.string.productTableViewCell.current_price(viewModel.currentPrice.toMoney)
         
         return cell
     }

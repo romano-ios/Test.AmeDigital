@@ -26,7 +26,7 @@ class ProductListRouter: NSObject, ProductListRoutingLogic, ProductListDataPassi
     var dataStore: ProductListDataStore?
 
     func routeToProductDetails() {
-        let productDetailsVC = ProductDetailsViewController(nibName: String(describing: ProductDetailsViewController.self), bundle: nil)
+        let productDetailsVC = ProductDetailsViewController(nibName: R.nib.productDetailsViewController.name, bundle: nil)
         guard let productDetailsRouter = productDetailsVC.router, var productDetailsDS = productDetailsRouter.dataStore else { return }
         
         if let dataStore = dataStore {

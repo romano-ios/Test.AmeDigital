@@ -10,7 +10,7 @@ extension Endpoint {
     
     static func getCategories() -> Endpoint {
         return Endpoint(
-            path: Constants.apiCategoryUrl,
+            path: R.string.networking.url_category(),
             method: .get,
             queryItems: []
         )

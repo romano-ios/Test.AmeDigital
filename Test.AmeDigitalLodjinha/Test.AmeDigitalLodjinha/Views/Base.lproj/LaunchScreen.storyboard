@@ -18,18 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSobre" translatesAutoresizingMaskIntoConstraints="NO" id="DIH-X7-n6w">
-                                <rect key="frame" x="107" y="349" width="200" height="208"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hkx-xF-zID">
+                                <rect key="frame" x="32" y="303" width="350" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="208" id="VUB-hs-hC4"/>
-                                    <constraint firstAttribute="width" constant="200" id="hvA-x9-xxg"/>
+                                    <constraint firstAttribute="height" constant="300" id="vpT-i3-hH7"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.41568627450980389" green="0.23921568627450979" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DIH-X7-n6w" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aGf-gn-Yz7"/>
-                            <constraint firstItem="DIH-X7-n6w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pNO-8Z-M7V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hkx-xF-zID" secondAttribute="trailing" constant="32" id="Hup-MX-1cv"/>
+                            <constraint firstItem="hkx-xF-zID" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Ig2-8x-qYX"/>
+                            <constraint firstItem="hkx-xF-zID" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="P9J-qj-qzG"/>
+                            <constraint firstItem="hkx-xF-zID" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YO4-NK-yig"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logoSobre" width="71.5" height="76"/>
+        <image name="launchScreenLogo" width="604" height="564"/>
     </resources>
 </document>

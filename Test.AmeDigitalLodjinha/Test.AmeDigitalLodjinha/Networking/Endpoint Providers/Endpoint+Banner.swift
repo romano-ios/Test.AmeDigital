@@ -10,7 +10,7 @@ extension Endpoint {
     
     static func getBanners() -> Endpoint {
         return Endpoint(
-            path: Constants.apiBannerUrl,
+            path: R.string.networking.url_banner(),
             method: .get,
             queryItems: []
         )

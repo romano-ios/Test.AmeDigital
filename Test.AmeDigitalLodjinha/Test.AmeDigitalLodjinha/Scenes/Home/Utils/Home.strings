@@ -1,0 +1,14 @@
+/* 
+  Home.strings
+  Test.AmeDigitalLodjinha
+
+  Created by Leandro Romano on 22/06/19.
+  Copyright © 2019 Leandro Romano. All rights reserved.
+*/
+
+navigation_title = "Home";
+
+error_loading_banners = "Erro ao carregar banners.";
+
+section_title_categories = "Categorias";
+section_title_best_sellers = "Mais Vendidos";

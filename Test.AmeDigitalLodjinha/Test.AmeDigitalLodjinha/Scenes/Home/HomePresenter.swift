@@ -10,13 +10,11 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
-
 protocol HomePresentationLogic {
     func presentNavigationLogo()
     func presentBannersLoading()
     func presentBanners(response: Home.Banner.Response)
-    func presentBannersError(_ error: Error)
+    func presentBannersError()
     func presentNewData()
     func presentBestSellerDetails()
     func presentProductsListByCategory()
@@ -39,8 +37,8 @@ class HomePresenter: HomePresentationLogic {
         viewController?.displayBanners(viewModel: Home.Banner.ViewModel(banners: viewModel))
     }
     
-    func presentBannersError(_ error: Error) {
-        viewController?.displayBannersError(error)
+    func presentBannersError() {
+        viewController?.displayBannersError()
     }
     
     func presentNewData() {

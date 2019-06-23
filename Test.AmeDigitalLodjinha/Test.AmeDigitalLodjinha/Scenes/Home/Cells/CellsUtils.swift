@@ -11,7 +11,7 @@ import UIKit
 
 struct CellsUtils {
     
-    static func generateSectionHeader(title: String) -> UIView {
+    static func createSectionHeader(title: String) -> UIView {
         let sectionView = UIView()
         sectionView.backgroundColor = .white
         
