@@ -124,3 +124,4 @@ iOSInjectionProject/
 # End of https://www.gitignore.io/api/swift,xcode,macos
 
 *.generated.swift
+Test.AmeDigitalLodjinha/Test.AmeDigitalLodjinhaTests/GeneratedMocks.swift

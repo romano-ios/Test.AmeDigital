@@ -57,6 +57,7 @@
 		FD79A1A722BC5B74003ED309 /* String+AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79A1A622BC5B74003ED309 /* String+AttributedString.swift */; };
 		FD79A1AA22BC6EB1003ED309 /* ReserveProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79A1A922BC6EB1003ED309 /* ReserveProductView.swift */; };
 		FD79A1AC22BC705F003ED309 /* ReserveProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79A1AB22BC705F003ED309 /* ReserveProductButton.swift */; };
+		FD9A8FFD22C0433C008E5B23 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9A8FFC22C0433C008E5B23 /* GeneratedMocks.swift */; };
 		FDA037DA22B71ECF001BFD97 /* BannerSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA037D922B71ECF001BFD97 /* BannerSliderView.swift */; };
 		FDDF59FD22B49A6A0003BA8E /* Endpoint+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */; };
 		FDDF59FF22B49B200003BA8E /* Endpoint+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */; };
@@ -173,6 +174,7 @@
 		FD79A1A622BC5B74003ED309 /* String+AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AttributedString.swift"; sourceTree = "<group>"; };
 		FD79A1A922BC6EB1003ED309 /* ReserveProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveProductView.swift; sourceTree = "<group>"; };
 		FD79A1AB22BC705F003ED309 /* ReserveProductButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveProductButton.swift; sourceTree = "<group>"; };
+		FD9A8FFC22C0433C008E5B23 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		FDA037D922B71ECF001BFD97 /* BannerSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerSliderView.swift; sourceTree = "<group>"; };
 		FDDF59FC22B49A6A0003BA8E /* Endpoint+Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Banner.swift"; sourceTree = "<group>"; };
 		FDDF59FE22B49B200003BA8E /* Endpoint+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Categories.swift"; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 		FD2B71FE22B3EBDB00AAB71D /* Test.AmeDigitalLodjinhaTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD9A8FFE22C04350008E5B23 /* Supporting Files */,
 				FD2B71FF22B3EBDB00AAB71D /* Test_AmeDigitalLodjinhaTests.swift */,
 				FD2B720122B3EBDB00AAB71D /* Info.plist */,
 			);
@@ -512,6 +515,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FD9A8FFE22C04350008E5B23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD9A8FFC22C0433C008E5B23 /* GeneratedMocks.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FDA037D822B71EB0001BFD97 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +632,7 @@
 				957804C88BEF3BF06829AE07 /* [CP] Check Pods Manifest.lock */,
 				FDE737D922BF16D700549CAB /* R.swift */,
 				FD2B71E322B3EBD900AAB71D /* Sources */,
+				FD9A8FFB22C04189008E5B23 /* Cuckoo Script */,
 				FD2B71E422B3EBD900AAB71D /* Frameworks */,
 				FD2B71E522B3EBD900AAB71D /* Resources */,
 				96FE2C7DA720B1BFF8BE004B /* [CP] Embed Pods Frameworks */,
@@ -642,6 +654,7 @@
 				FD2B71F722B3EBDB00AAB71D /* Sources */,
 				FD2B71F822B3EBDB00AAB71D /* Frameworks */,
 				FD2B71F922B3EBDB00AAB71D /* Resources */,
+				FDBD64814073BBADF0CDBD0C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -850,6 +863,48 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test.AmeDigitalLodjinha/Pods-Test.AmeDigitalLodjinha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FD9A8FFB22C04189008E5B23 /* Cuckoo Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Cuckoo Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Scenes/Home/HomePresenter.swift\" \\\n\"${INPUT_DIR}/Scenes/Home/HomeWorker.swift\" \n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
+		FDBD64814073BBADF0CDBD0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test.AmeDigitalLodjinhaTests/Pods-Test.AmeDigitalLodjinhaTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test.AmeDigitalLodjinhaTests/Pods-Test.AmeDigitalLodjinhaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FDE737D922BF16D700549CAB /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -864,7 +919,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -946,6 +1001,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD2B720022B3EBDB00AAB71D /* Test_AmeDigitalLodjinhaTests.swift in Sources */,
+				FD9A8FFD22C0433C008E5B23 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
