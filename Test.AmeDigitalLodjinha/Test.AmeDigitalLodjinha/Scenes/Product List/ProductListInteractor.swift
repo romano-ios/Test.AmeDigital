@@ -32,15 +32,18 @@ class ProductListInteractor: ProductListBusinessLogic, ProductListDataStore {
     var presenter: ProductListPresentationLogic?
     var worker: ProductListWorker?
     var category: CategoryModel?
-    var products: [ProductModel]?
+    var products = [ProductModel]()
     var product: ProductModel?
+    
+    var limit: Int = 20
+    var offset: Int = 0
     
     init(worker: ProductListWorker = ProductListWorker()) {
         self.worker = worker
     }
     
     var numberOfRows: Int {
-        return products?.count ?? 0
+        return products.count
     }
     
     func setupTitleWithCategoryName() {
@@ -55,14 +58,16 @@ class ProductListInteractor: ProductListBusinessLogic, ProductListDataStore {
     
     func requestProductsByCategory() {
         if let category = category {
-            worker?.getProductsByCategory(id: category.id, offset: 0, limit: 20)
+            worker?.getProductsByCategory(id: category.id, offset: offset, limit: limit)
                 .done(handleRequestSuccess)
                 .catch(handleRequestError)
         }
     }
     
     func handleRequestSuccess(_ response: ProductList.Response) {
-        products = response.data
+        offset = offset + limit
+        
+        products.append(contentsOf: response.data)
         
         if numberOfRows == 0 {
             presenter?.presentEmptyState()
@@ -78,12 +83,11 @@ class ProductListInteractor: ProductListBusinessLogic, ProductListDataStore {
     }
     
     func cellForRow(at index: Int) -> ProductViewModel {
-        guard let product = products?[index] else { fatalError("Invalid index for products array.") }
-        return ProductViewModel(product: product)
+        return ProductViewModel(product: products[index])
     }
     
     func didSelect(at index: Int) {
-        product = products?[index]
+        product = products[index]
         presenter?.presentProductDetails()
     }
 

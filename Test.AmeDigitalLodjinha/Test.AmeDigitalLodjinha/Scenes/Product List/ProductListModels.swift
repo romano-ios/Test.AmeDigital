@@ -12,14 +12,10 @@
 
 enum ProductList {
   
-    class Response: BaseResponse<[ProductModel]> {
-        override init(data: [ProductModel]) {
-            super.init(data: data)
-        }
-        
-        required init(from decoder: Decoder) throws {
-            try super.init(from: decoder)
-        }
+    class Response: Codable {
+        let offset: Int
+        let total: Int
+        let data: [ProductModel]
     }
     
     struct ViewModel {

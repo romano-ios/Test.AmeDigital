@@ -24,4 +24,12 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         interactor?.didSelect(at: indexPath.row)
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let endScrolling: CGFloat = scrollView.contentOffset.y + scrollView.frame.size.height
+        
+        if endScrolling >= scrollView.contentSize.height {
+            interactor?.requestProductsByCategory()
+        }
+    }
+    
 }
