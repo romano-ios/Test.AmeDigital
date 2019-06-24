@@ -11,24 +11,92 @@ import XCTest
 class Test_AmeDigitalLodjinhaUITests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    }
+    
+    func testReserveFirstBookProduct() {
+        let app = XCUIApplication()
+        sleep(2)
+        app.tables.cells.firstMatch.tap()
+        
+        let book = app.tables.staticTexts["HTML e CSS"]
+        if book.waitForExistence(timeout: 5) {
+            XCTAssertTrue(book.exists)
+            book.tap()
+        }
+        
+        let reserveButton = app.buttons["Reservar"]
+        if reserveButton.waitForExistence(timeout: 5) {
+            XCTAssertTrue(reserveButton.exists)
+            reserveButton.tap()
+            
+            sleep(2)
+            
+            let successMessage = app.alerts["Sucesso!"]
+            XCTAssertTrue(successMessage.exists)
+            successMessage.buttons["Fechar"].tap()
+            
+            sleep(2)
+            
+            let goBackToListAfterReserve = app.navigationBars["Livros"]
+            XCTAssertTrue(goBackToListAfterReserve.exists)
+        }
+    }
+    
+    func testReserveFirstProductFromBestSellersList() {
+        let app = XCUIApplication()
+        sleep(2)
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Fifa 17"]/*[[".cells.staticTexts[\"Fifa 17\"]",".staticTexts[\"Fifa 17\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let reserveButton = app.buttons["Reservar"]
+        if reserveButton.waitForExistence(timeout: 5) {
+            XCTAssertTrue(reserveButton.exists)
+            reserveButton.tap()
+            
+            sleep(2)
+            
+            let successMessage = app.alerts["Sucesso!"]
+            XCTAssertTrue(successMessage.exists)
+            successMessage.buttons["Fechar"].tap()
+            
+            sleep(2)
+            
+            let goBackToHomeAfterReserve = app.navigationBars["Home"]
+            XCTAssertTrue(goBackToHomeAfterReserve.exists)
+        }
+    }
+    
+    func testCheckIfTabBarIsHiddenOnOtherViews() {
+        let app = XCUIApplication()
+        sleep(2)
+        
+        let tabBarHomeButton = app.tabBars.buttons["Home"]
+        XCTAssertTrue(tabBarHomeButton.exists)
+        
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Fifa 17"]/*[[".cells.staticTexts[\"Fifa 17\"]",".staticTexts[\"Fifa 17\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        sleep(1)
+        
+        XCTAssertFalse(tabBarHomeButton.exists)
+        app.navigationBars["Games"].buttons["Home"].tap()
+        
+        XCTAssertTrue(tabBarHomeButton.exists)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAboutView() {
+        let app = XCUIApplication()
+        let aboutTabBar = app.tabBars.buttons["Sobre"]
+        XCTAssertTrue(aboutTabBar.exists)
+        aboutTabBar.tap()
+        
+        let aboutNavigation = app.navigationBars["Sobre"]
+        XCTAssertTrue(aboutNavigation.exists)
+        
+        let nameApp = app.staticTexts["a Lodjinha"]
+        XCTAssertTrue(nameApp.exists)
+        
+        let developerName = app.staticTexts["Leandro Romano"]
+        XCTAssertTrue(developerName.exists)
     }
 
 }

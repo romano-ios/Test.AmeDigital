@@ -17,9 +17,9 @@ target 'Test.AmeDigitalLodjinha' do
     pod "Nimble"
   end
 
-  target 'Test.AmeDigitalLodjinhaUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+end
 
+target 'Test.AmeDigitalLodjinhaUITests' do
+  inherit! :search_paths
+  # Pods for testing
 end
