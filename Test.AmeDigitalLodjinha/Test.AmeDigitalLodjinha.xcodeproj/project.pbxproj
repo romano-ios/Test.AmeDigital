@@ -51,6 +51,7 @@
 		FD67B47422C04C7700D5279D /* HomeBannerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67B47322C04C7700D5279D /* HomeBannerInteractorTests.swift */; };
 		FD67B47622C04D6200D5279D /* HomeCategoriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67B47522C04D6200D5279D /* HomeCategoriesInteractorTests.swift */; };
 		FD67B47822C0562400D5279D /* HomeBestSellerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67B47722C0562400D5279D /* HomeBestSellerInteractorTests.swift */; };
+		FD67B47B22C0680200D5279D /* ProductListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67B47A22C0680200D5279D /* ProductListInteractorTests.swift */; };
 		FD79A19E22BC3A26003ED309 /* ProductDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79A19822BC3A26003ED309 /* ProductDetailsPresenter.swift */; };
 		FD79A19F22BC3A26003ED309 /* ProductDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79A19922BC3A26003ED309 /* ProductDetailsWorker.swift */; };
 		FD79A1A022BC3A26003ED309 /* ProductDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79A19A22BC3A26003ED309 /* ProductDetailsRouter.swift */; };
@@ -171,6 +172,7 @@
 		FD67B47322C04C7700D5279D /* HomeBannerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerInteractorTests.swift; sourceTree = "<group>"; };
 		FD67B47522C04D6200D5279D /* HomeCategoriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoriesInteractorTests.swift; sourceTree = "<group>"; };
 		FD67B47722C0562400D5279D /* HomeBestSellerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestSellerInteractorTests.swift; sourceTree = "<group>"; };
+		FD67B47A22C0680200D5279D /* ProductListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractorTests.swift; sourceTree = "<group>"; };
 		FD79A19822BC3A26003ED309 /* ProductDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPresenter.swift; sourceTree = "<group>"; };
 		FD79A19922BC3A26003ED309 /* ProductDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsWorker.swift; sourceTree = "<group>"; };
 		FD79A19A22BC3A26003ED309 /* ProductDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsRouter.swift; sourceTree = "<group>"; };
@@ -516,6 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				FD67B47022C045FA00D5279D /* Home */,
+				FD67B47922C067EB00D5279D /* Product List */,
+				FD67B47C22C06F5F00D5279D /* Product Details */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -529,6 +533,21 @@
 				FD67B47722C0562400D5279D /* HomeBestSellerInteractorTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FD67B47922C067EB00D5279D /* Product List */ = {
+			isa = PBXGroup;
+			children = (
+				FD67B47A22C0680200D5279D /* ProductListInteractorTests.swift */,
+			);
+			path = "Product List";
+			sourceTree = "<group>";
+		};
+		FD67B47C22C06F5F00D5279D /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Product Details";
 			sourceTree = "<group>";
 		};
 		FD79A1A822BC6E54003ED309 /* Views */ = {
@@ -896,7 +915,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Scenes/Home/HomePresenter.swift\" \\\n\"${INPUT_DIR}/Scenes/Home/HomeWorker.swift\" \n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Scenes/Home/HomePresenter.swift\" \\\n\"${INPUT_DIR}/Scenes/Home/HomeWorker.swift\" \\\n\"${INPUT_DIR}/Scenes/Product List/ProductListPresenter.swift\" \\\n\"${INPUT_DIR}/Scenes/Product List/ProductListWorker.swift\" \\\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		FDBD64814073BBADF0CDBD0C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1021,6 +1040,7 @@
 				FD67B47222C0460A00D5279D /* HomeInteractorTests.swift in Sources */,
 				FD67B46E22C045D500D5279D /* GeneratedMocks.swift in Sources */,
 				FD67B47822C0562400D5279D /* HomeBestSellerInteractorTests.swift in Sources */,
+				FD67B47B22C0680200D5279D /* ProductListInteractorTests.swift in Sources */,
 				FD67B47622C04D6200D5279D /* HomeCategoriesInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,12 @@ enum ProductList {
         let offset: Int
         let total: Int
         let data: [ProductModel]
+        
+        init(offset: Int, total: Int, data: [ProductModel]) {
+            self.offset = offset
+            self.total = total
+            self.data = data
+        }
     }
     
     struct ViewModel {
