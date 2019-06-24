@@ -14,6 +14,12 @@ class CategoryModel: Codable {
     let description: String
     let imageUrl: String
     
+    init(id: Int, description: String, imageUrl: String) {
+        self.id = id
+        self.description = description
+        self.imageUrl = imageUrl
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case description = "descricao"

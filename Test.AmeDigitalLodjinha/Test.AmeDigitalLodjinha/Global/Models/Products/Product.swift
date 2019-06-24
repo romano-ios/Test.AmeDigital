@@ -18,6 +18,16 @@ class ProductModel: Codable {
     let currentPrice: Double
     let category: CategoryModel
     
+    init(id: Int, name: String, imageUrl: String, description: String, oldPrice: Double, currentPrice: Double, category: CategoryModel) {
+        self.id = id
+        self.name = name
+        self.imageUrl = imageUrl
+        self.description = description
+        self.oldPrice = oldPrice
+        self.currentPrice = currentPrice
+        self.category = category
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name = "nome"
